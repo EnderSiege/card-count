@@ -52,6 +52,8 @@ function shuffleCards() {
     // Establish a shuffled deck by placing all card values in the deck array
     for (let i = 0; i < 52; i++) {
         let card =  Math.floor( ( Math.random() *  14 ) );
-        
+
     }
+
+    // I can already tell this is not going to work efficiently.. 
 }
