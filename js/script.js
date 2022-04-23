@@ -75,15 +75,22 @@ function countHand(hand) {
     // Initial hand count, noting aces
     for (let i = 0; i < hand.length ; i++) {
         if (hand[i] === "A") {
+            handCount += 11;
             hasAce++;
         } else if (hand[i] === "J" || hand[i] === "Q" || hand[i] === "K") {
-            count += 10;
+            handCount += 10;
         } else {
-            count += hand[i];
+            handCount += parseInt(hand[i]);
         }
     }
 
+    // If the count is over 21, and an ace is still holding the value of 11, change its value to 1
+    while (hasAce > 0 && handCount > 21) {
+        handCount -= 10;
+        hasAce --;
+    }
 
+    return handCount;
 }
 
 
@@ -110,5 +117,7 @@ console.log("Dealing cards for start of game...");
 dealCards(shuffled);
 console.log("Dealer cards:");
 console.log(dealer);
+console.log(countHand(dealer));
 console.log("Player cards:");
 console.log(player);
+console.log(countHand(player));
