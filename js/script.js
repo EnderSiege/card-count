@@ -60,7 +60,10 @@ function getCard(deck) {
 
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
-    
+    player.push(getCard(deck));
+    dealer.push(getCard(deck));
+    player.push(getCard(deck));
+    dealer.push(getCard(deck));
 }
 
 console.log(deck);
