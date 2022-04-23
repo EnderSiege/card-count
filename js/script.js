@@ -1,5 +1,7 @@
 // Deck array starts empty
-let deck = [];
+let deck = [],
+    player = [],
+    dealer = [];
 
 // Shuffle the deck array
 function shuffleDeck(array) {
@@ -58,7 +60,7 @@ function getCard(deck) {
 
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
-
+    
 }
 
 console.log(deck);
