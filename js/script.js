@@ -66,6 +66,17 @@ function dealCards(deck) {
     dealer.push(getCard(deck));
 }
 
+function countHand(hand) {
+    // Since Aces can be counted as a 1 or 11, they require a different method
+    // I could set hasAce to boolean, but it's possible to have more than one Ace
+    let hasAce = 0;
+
+    
+}
+
+
+// Function calls below
+
 console.log(deck);
 
 // shuffled is the variable holding the shuffled deck while game is in play
