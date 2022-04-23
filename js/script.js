@@ -51,14 +51,23 @@ function shuffleCards(array) {
 }
 
 // Deal a card
-function getCard() {
+function getCard(deck) {
     const card = deck.pop();
     return card;
 }
 
 console.log(deck);
 
+// shuffled is the variable holding the shuffled deck while game is in play
 let shuffled = shuffleDeck(deck);
 
-console.log("Cards are shuffled:")
+// testing shuffle
+console.log("Cards are shuffled:");
+console.log(shuffled);
+
+// testing card deal
+console.log("Dealing a card...");
+let card;
+card = getCard(shuffled);
+console.log(card);
 console.log(shuffled);
