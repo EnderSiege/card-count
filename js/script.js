@@ -33,7 +33,7 @@ function resetCards(array) {
 // Fisher-Yates Shuffle
 // https://bost.ocks.org/mike/shuffle/
 function shuffleCards(array) {
-    var m = array.length, t, i;
+    let m = array.length, t, i;
   
     // While there remain elements to shuffle…
     while (m) {
@@ -54,6 +54,11 @@ function shuffleCards(array) {
 function getCard(deck) {
     const card = deck.pop();
     return card;
+}
+
+// Initial card deal among both players (currently only works for two)
+function dealCards(deck) {
+
 }
 
 console.log(deck);
