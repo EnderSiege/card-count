@@ -86,3 +86,6 @@ console.log(shuffled);
 console.log("Dealing cards for start of game...");
 dealCards(shuffled);
 console.log("Dealer cards:");
+console.log(dealer);
+console.log("Player cards:");
+console.log(player);
