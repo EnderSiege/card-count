@@ -60,4 +60,5 @@ console.log(deck);
 
 let shuffled = shuffleDeck(deck);
 
+console.log("Cards are shuffled:")
 console.log(shuffled);
