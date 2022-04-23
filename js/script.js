@@ -69,9 +69,21 @@ function dealCards(deck) {
 function countHand(hand) {
     // Since Aces can be counted as a 1 or 11, they require a different method
     // I could set hasAce to boolean, but it's possible to have more than one Ace
-    let hasAce = 0;
+    let hasAce = 0
+        handCount = 0;
 
-    
+    // Initial hand count, noting aces
+    for (let i = 0; i < hand.length ; i++) {
+        if (hand[i] === "A") {
+            hasAce++;
+        } else if (hand[i] === "J" || hand[i] === "Q" || hand[i] === "K") {
+            count += 10;
+        } else {
+            count += hand[i];
+        }
+    }
+
+
 }
 
 
