@@ -81,3 +81,8 @@ let card;
 card = getCard(shuffled);
 console.log(card);
 console.log(shuffled);
+
+// testing dealCards
+console.log("Dealing cards for start of game...");
+dealCards(shuffled);
+console.log("Dealer cards:");
