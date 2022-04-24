@@ -129,7 +129,7 @@ console.log(countHand(player));
 // "Hit Me" button event listener
 hitMeBtn.addEventListener("click", function () {
     hitMe(shuffled);
-})
+});
 
 // Function for the "Hit Me" button
 function hitMe(deck) {
@@ -164,3 +164,7 @@ function hitMe(deck) {
     }
 }
 
+// "Stand" button event listener
+standBtn.addEventListener("click", function() {
+
+});
