@@ -22,6 +22,17 @@ function shuffleDeck(array) {
     return array;
 }
 
+// Next hand
+function nextHand() {
+    console.log("Dealing the next hand...");
+
+}
+
+function clearHands() {
+    player = [],
+    dealer = [];
+}
+
 // Reset the cards in the deck
 function resetCards(array) {
     // array = ["AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
@@ -170,7 +181,7 @@ standBtn.addEventListener("click", function() {
     stand(shuffled);
 });
 
-// function for the "Stand" button
+// Function for the "Stand" button
 function stand(deck) {
 // Ensure player does not have 21 or more cards, then carry on
     if (countHand(player) > 21) {
@@ -202,5 +213,11 @@ function stand(deck) {
 
 // "New" button event listener
 newBtn.addEventListener("click", function() {
-    
+    newGame();
 })
+
+// Function for the "New" button
+function newHand() {
+    // Gives player a new hand without shuffling
+
+}
