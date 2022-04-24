@@ -26,6 +26,11 @@ function shuffleDeck(array) {
 function nextHand() {
     console.log("Dealing the next hand...");
 
+    // Clear both hands
+    clearHands();
+
+    // Deal new hands
+    dealCards(shuffled);
 }
 
 function clearHands() {
@@ -107,6 +112,14 @@ function countHand(hand) {
     }
 
     return handCount;
+}
+
+function announcePlayerHand() {
+
+}
+
+function announceDealerHand() {
+    
 }
 
 
@@ -213,11 +226,11 @@ function stand(deck) {
 
 // "New" button event listener
 newBtn.addEventListener("click", function() {
-    newGame();
+    newHand();
 })
 
 // Function for the "New" button
 function newHand() {
-    // Gives player a new hand without shuffling
-
+    // Deals new hands without shuffling
+    nextHand();
 }
