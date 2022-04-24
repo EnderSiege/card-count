@@ -118,6 +118,7 @@ function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
     console.log(countHand(player));
+    checkBlackjack();
 }
 
 function announceDealerHand() {
@@ -127,7 +128,11 @@ function announceDealerHand() {
 }
 
 function checkBlackjack() {
-    if (countHand(player) === 21) {
+    if (countHand(player) === 21 && countHand(dealer)) {
+        console.log("Both you and the dealer have Blackjack");
+    } else if (countHand(dealer) === 21) {
+        console.log("Dealer has Blackjack");
+    } else if (countHand(player) === 21) {
         console.log("You have Blackjack!");
     }
 }
