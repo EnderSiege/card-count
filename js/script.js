@@ -148,12 +148,9 @@ console.log(shuffled);
 // testing dealCards
 console.log("Dealing cards for start of game...");
 dealCards(shuffled);
-console.log("Dealer cards:");
-console.log(dealer);
-console.log(countHand(dealer));
+announceDealerHand();
 console.log("Player cards:");
-console.log(player);
-console.log(countHand(player));
+announcePlayerHand();
 
 // "Hit Me" button event listener
 hitMeBtn.addEventListener("click", function() {
