@@ -1,8 +1,5 @@
-const hitMe = document.getElementById("hit-me");
-
-hitMe.addEventListener("click", function () {
-    console.log("clicky!");
-})
+// "Hit Me" button
+const hitMeBtn = document.getElementById("hit-me");
 
 // Deck array starts empty
 let deck = [],
@@ -127,3 +124,41 @@ console.log(countHand(dealer));
 console.log("Player cards:");
 console.log(player);
 console.log(countHand(player));
+
+// "Hit Me" button event listener
+hitMeBtn.addEventListener("click", function () {
+    hitMe(shuffled);
+})
+
+// Function for the "Hit Me" button
+function hitMe(deck) {
+    // Ensure player does not have 21 or more cards
+    if (countHand(player) > 21) {
+        console.log("Cannot deal you a card, you busted!");
+    } else if (countHand(player) === 21) {
+        console.log("Cannot deal you a card, you have Blackjack!");
+    } else {
+        // Inform player that another card is being dealt
+        console.log("Dealing a card!");
+
+        // Deal player a card
+        player.push(getCard(deck));
+
+        // Display dealer cards and count
+        console.log("Dealer cards:");
+        console.log(dealer);
+        console.log(countHand(dealer));
+
+        // Display player cards and count
+        console.log("Player cards:");
+        console.log(player);
+        console.log(countHand(player));
+    }
+
+    // Announce if player has Blackjack or bust
+    if (countHand(player) > 21) {
+        console.log("You busted!");
+    } else if (countHand(player === 21)) {
+        console.logI("You have Blackjack!");
+    }
+}
