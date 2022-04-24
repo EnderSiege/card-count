@@ -1,6 +1,7 @@
 // "Hit Me" and "Stand" buttons
 const hitMeBtn = document.getElementById("hit-me");
 const standBtn = document.getElementById("stand");
+const newBtn = document.getElementById("new-round");
 
 // Deck array starts empty
 let deck = [],
@@ -133,7 +134,7 @@ hitMeBtn.addEventListener("click", function () {
 
 // Function for the "Hit Me" button
 function hitMe(deck) {
-    // Ensure player does not have 21 or more cards
+    // Ensure player does not have 21 or more cards, then carry on
     if (countHand(player) > 21) {
         console.log("Cannot deal you a card, you busted!");
     } else if (countHand(player) === 21) {
@@ -166,5 +167,35 @@ function hitMe(deck) {
 
 // "Stand" button event listener
 standBtn.addEventListener("click", function() {
-
+    stand(shuffled);
 });
+
+// function for the "Stand" button
+function stand(deck) {
+// Ensure player does not have 21 or more cards, then carry on
+    if (countHand(player) > 21) {
+        console.log("You busted!");
+    } else if (countHand(player) === 21) {
+        if (countHand(dealer) === 21) {
+            console.log("Both you and the dealer have Blackjack!");
+        } else {
+            console.log("Congratulations! You win this hand!");
+        }
+    } else {
+        // Inform player that another card is being dealt
+        console.log("Dealing a card!");
+
+        // Deal player a card
+        player.push(getCard(deck));
+
+        // Display dealer cards and count
+        console.log("Dealer cards:");
+        console.log(dealer);
+        console.log(countHand(dealer));
+
+        // Display player cards and count
+        console.log("Player cards:");
+        console.log(player);
+        console.log(countHand(player));
+    }
+}
