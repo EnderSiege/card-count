@@ -1,5 +1,6 @@
-// "Hit Me" button
+// "Hit Me" and "Stand" buttons
 const hitMeBtn = document.getElementById("hit-me");
+const standBtn = document.getElementById("stand");
 
 // Deck array starts empty
 let deck = [],
@@ -162,3 +163,4 @@ function hitMe(deck) {
         console.logI("You have Blackjack!");
     }
 }
+
