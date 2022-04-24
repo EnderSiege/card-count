@@ -115,11 +115,15 @@ function countHand(hand) {
 }
 
 function announcePlayerHand() {
-
+    console.log("Player cards:");
+    console.log(player);
+    console.log(countHand(player));
 }
 
 function announceDealerHand() {
-    
+    console.log("Dealer cards:");
+    console.log(dealer);
+    console.log(countHand(dealer));
 }
 
 
@@ -171,14 +175,10 @@ function hitMe(deck) {
         player.push(getCard(deck));
 
         // Display dealer cards and count
-        console.log("Dealer cards:");
-        console.log(dealer);
-        console.log(countHand(dealer));
+        announceDealerHand();
 
         // Display player cards and count
-        console.log("Player cards:");
-        console.log(player);
-        console.log(countHand(player));
+        announcePlayerHand();
     }
 
     // Announce if player has Blackjack or bust
