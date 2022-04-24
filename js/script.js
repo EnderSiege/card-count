@@ -203,8 +203,25 @@ function stand(deck) {
             console.log("Congratulations! You win this hand!");
         }
     } else {
-        if (countHand(dealer) < countHand(player)) {
-            
+        let lessThan = true;
+
+        while (lessThan === true) {
+            if (countHand(dealer) <= countHand(player)) {
+                // Deal a card to the dealer
+                console.log("Dealer is dealt a card...");
+                dealer.push(getCard(shuffled));
+                announceDealerHand();
+                announcePlayerHand();
+            } else {
+                lessThan = false;
+                if (countHand(dealer) > 21) {
+                    console.log("Dealer busted! You win this hand!");
+                } else if (countHand(dealer) === 21) {
+                    console.log("Dealer has Blackjack!  You lose...");
+                } else {
+                    console.log("Idk what happen lol");
+                }
+            }
         }
     }
 }
