@@ -203,21 +203,9 @@ function stand(deck) {
             console.log("Congratulations! You win this hand!");
         }
     } else {
-        // Inform player that another card is being dealt
-        console.log("Dealing a card!");
-
-        // Deal player a card
-        player.push(getCard(deck));
-
-        // Display dealer cards and count
-        console.log("Dealer cards:");
-        console.log(dealer);
-        console.log(countHand(dealer));
-
-        // Display player cards and count
-        console.log("Player cards:");
-        console.log(player);
-        console.log(countHand(player));
+        if (countHand(dealer) < countHand(player)) {
+            
+        }
     }
 }
 
@@ -230,4 +218,8 @@ newBtn.addEventListener("click", function() {
 function newHand() {
     // Deals new hands without shuffling
     nextHand();
+
+    // Announce both hands
+    announceDealerHand();
+    announcePlayerHand();
 }
