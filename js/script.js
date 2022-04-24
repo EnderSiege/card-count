@@ -1,3 +1,9 @@
+const hitMe = document.getElementById("hit-me");
+
+hitMe.addEventListener("click", function () {
+    console.log("clicky!");
+})
+
 // Deck array starts empty
 let deck = [],
     player = [],
