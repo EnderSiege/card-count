@@ -203,6 +203,7 @@ standBtn.addEventListener("click", function() {
 
 // Function for the "Stand" button
 function stand(deck) {
+    console.log("You choose to stand");
 // Ensure player does not have 21 or more cards, then carry on
     if (countHand(player) > 21) {
         console.log("You busted!");
@@ -213,12 +214,7 @@ function stand(deck) {
             console.log("Congratulations! You win this hand!");
         }
     } else {
-        let lessThan = true;
-
-        while (lessThan === true) {
-            // Delay before the next deal
-            setTimeout(() => {}, 2000);
-
+        var dealInterval = setInterval(function() {
             if (countHand(dealer) <= countHand(player)) {
                 // Deal a card to the dealer
                 console.log("Dealer is dealt a card...");
@@ -230,13 +226,61 @@ function stand(deck) {
                 if (countHand(dealer) > 21) {
                     console.log("Dealer busted! You win this hand!");
                 } else if (countHand(dealer) === 21) {
-                    console.log("Dealer has Blackjack!  You lose...");
+                    console.log("You lose...");
                 } else {
                     console.log("Dealer wins this hand.");
                 }
+
+                clearInterval(dealInterval);
             }
+        }, 1000);
         }
-    }
+
+
+        // if (countHand(dealer) <= countHand(player)) {
+        //     // Deal a card to the dealer
+        //     console.log("Dealer is dealt a card...");
+        //     dealer.push(getCard(shuffled));
+        //     announceDealerHand();
+        //     announcePlayerHand();
+        // } else {
+        //     lessThan = false;
+        //     if (countHand(dealer) > 21) {
+        //         console.log("Dealer busted! You win this hand!");
+        //     } else if (countHand(dealer) === 21) {
+        //         console.log("Dealer has Blackjack!  You lose...");
+        //     } else {
+        //         console.log("Dealer wins this hand.");
+        //     }
+        // }
+
+
+        // if (countHand(dealer) <= countHand(player)) {
+        //         // Deal a card to the dealer
+        //         console.log("Dealer is dealt a card...");
+        //         dealer.push(getCard(shuffled));
+        //         announceDealerHand();
+        //         announcePlayerHand();
+        //         stand(deck);
+        //         var dealInterval = setInterval(function() {
+        //             clearInterval(dealInterval);
+        //             stand(shuffled);
+        //         }, 1000);
+        // } else {
+        //     if (countHand(dealer) > 21) {
+        //         console.log("Dealer busted! You win this hand!");
+        //     } else if (countHand(dealer) === 21) {
+        //         console.log("Dealer has Blackjack!  You lose...");
+        //     } else {
+        //         console.log("Dealer wins this hand.");
+        //     }
+
+        //     clearInterval(dealInterval);
+        // }
+}
+
+function dealDealer() {
+    
 }
 
 // "New" button event listener
