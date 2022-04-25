@@ -150,17 +150,16 @@ console.log("Cards are shuffled:");
 console.log(shuffled);
 
 // testing card deal
-console.log("Dealing a card...");
-let card;
-card = getCard(shuffled);
-console.log(card);
-console.log(shuffled);
+// console.log("Dealing a card...");
+// let card;
+// card = getCard(shuffled);
+// console.log(card);
+// console.log(shuffled);
 
 // testing dealCards
 console.log("Dealing cards for start of game...");
 dealCards(shuffled);
 announceDealerHand();
-console.log("Player cards:");
 announcePlayerHand();
 
 // "Hit Me" button event listener
@@ -217,6 +216,9 @@ function stand(deck) {
         let lessThan = true;
 
         while (lessThan === true) {
+            // Delay before the next deal
+            setTimeout(() => {}, 2000);
+
             if (countHand(dealer) <= countHand(player)) {
                 // Deal a card to the dealer
                 console.log("Dealer is dealt a card...");
@@ -230,7 +232,7 @@ function stand(deck) {
                 } else if (countHand(dealer) === 21) {
                     console.log("Dealer has Blackjack!  You lose...");
                 } else {
-                    console.log("Idk what happen lol");
+                    console.log("Dealer wins this hand.");
                 }
             }
         }
