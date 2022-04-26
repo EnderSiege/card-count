@@ -11,7 +11,25 @@ let deck = [],
     decksInPlay = 1;
 
 // Update the count
-function updateCount() {
+function updateCount(card) {
+    switch (card) {
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+            runningCount ++;
+            break;
+        case '10':
+        case 'J':
+        case 'Q':
+        case 'K':
+        case 'A':
+            runningCount --;
+            break;
+        default:
+            break;
+    }
 
 }
 
@@ -103,7 +121,13 @@ function shuffleCards(array) {
 
 // Deal a card
 function getCard(deck) {
+    // Pull card from the deck array
     const card = deck.pop();
+
+    // Update the game count
+    updateCount(card);
+
+    // Send card out
     return card;
 }
 
