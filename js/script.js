@@ -243,46 +243,6 @@ function stand(deck) {
         }
 
 
-        // if (countHand(dealer) <= countHand(player)) {
-        //     // Deal a card to the dealer
-        //     console.log("Dealer is dealt a card...");
-        //     dealer.push(getCard(shuffled));
-        //     announceDealerHand();
-        //     announcePlayerHand();
-        // } else {
-        //     lessThan = false;
-        //     if (countHand(dealer) > 21) {
-        //         console.log("Dealer busted! You win this hand!");
-        //     } else if (countHand(dealer) === 21) {
-        //         console.log("Dealer has Blackjack!  You lose...");
-        //     } else {
-        //         console.log("Dealer wins this hand.");
-        //     }
-        // }
-
-
-        // if (countHand(dealer) <= countHand(player)) {
-        //         // Deal a card to the dealer
-        //         console.log("Dealer is dealt a card...");
-        //         dealer.push(getCard(shuffled));
-        //         announceDealerHand();
-        //         announcePlayerHand();
-        //         stand(deck);
-        //         var dealInterval = setInterval(function() {
-        //             clearInterval(dealInterval);
-        //             stand(shuffled);
-        //         }, 1000);
-        // } else {
-        //     if (countHand(dealer) > 21) {
-        //         console.log("Dealer busted! You win this hand!");
-        //     } else if (countHand(dealer) === 21) {
-        //         console.log("Dealer has Blackjack!  You lose...");
-        //     } else {
-        //         console.log("Dealer wins this hand.");
-        //     }
-
-        //     clearInterval(dealInterval);
-        // }
 }
 
 function dealDealer() {
