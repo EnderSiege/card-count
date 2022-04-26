@@ -45,10 +45,21 @@ function resetCards(array) {
     //     "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC",
     //     "AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS"];
 
-    array = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
+    const oneDeck = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
+    const decksInPlay = 8;
+
+    array = [];
+
+    // Now working with more than one deck
+    for (let i = 0; i < decksInPlay; i++) {
+        for (let j = 0; j < oneDeck.length; j++) {
+            array.push(oneDeck[j]);
+        }
+    }
 
     return array;
 }
