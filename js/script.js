@@ -2,7 +2,8 @@
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         newBtn = document.getElementById("new-round"),
-        runningCountElem = document.getElementById("running-count");
+        runningCountElem = document.getElementById("running-count"),
+        remainingCardsElem = document.getElementById("cards-rem");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -187,6 +188,7 @@ function announcePlayerHand() {
     remainingCards(shuffled);
     remainingDecks(shuffled);
     checkBlackjack();
+    shareCurrentCount();
 }
 
 function announceDealerHand() {
