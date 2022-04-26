@@ -41,11 +41,6 @@ function shareCurrentCount() {
     runningCountEl.textContent = runningCount;
 }
 
-// share-count button event listener
-// runningCountElem.addEventListener("click", function() {
-//     shareCurrentCount();
-// })
-
 // Shuffle the deck array
 function shuffleDeck(array, decks) {
     // Inform player the deck is being shuffled
@@ -219,13 +214,6 @@ let shuffled = shuffleDeck(deck,decksInPlay);
 // testing shuffle
 console.log("Cards are shuffled:");
 console.log(shuffled);
-
-// testing card deal
-// console.log("Dealing a card...");
-// let card;
-// card = getCard(shuffled);
-// console.log(card);
-// console.log(shuffled);
 
 // testing dealCards
 console.log("Dealing cards for start of game...");
