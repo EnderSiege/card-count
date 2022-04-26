@@ -7,15 +7,21 @@ const newBtn = document.getElementById("new-round");
 let deck = [],
     player = [],
     dealer = [],
-    runningCount;
+    runningCount,
+    decksInPlay = 1;
+
+// Update the count
+function updateCount() {
+
+}
 
 // Shuffle the deck array
-function shuffleDeck(array) {
+function shuffleDeck(array, decks) {
     // Inform player the deck is being shuffled
     console.log("Shuffling deck");
 
     // Reset the number of cards in the deck
-    array = resetCards(array);
+    array = resetCards(array, decks);
 
     // Perform the shuffle
     array = shuffleCards(array);
@@ -40,7 +46,7 @@ function clearHands() {
 }
 
 // Reset the cards in the deck
-function resetCards(array) {
+function resetCards(array,decks) {
     // array = ["AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
     //     "AD", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD",
     //     "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC",
@@ -51,7 +57,7 @@ function resetCards(array) {
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-    const decksInPlay = 1;
+    const decksInPlay = decks;
 
     array = [];
 
@@ -167,7 +173,7 @@ function checkBlackjack() {
 console.log(deck);
 
 // shuffled is the variable holding the shuffled deck while game is in play
-let shuffled = shuffleDeck(deck);
+let shuffled = shuffleDeck(deck,decksInPlay);
 
 // testing shuffle
 console.log("Cards are shuffled:");
@@ -263,9 +269,9 @@ function stand(deck) {
 
 }
 
-function checkDeck(deck) {
+function checkDeck(deck, decksTotal) {
     if (deck.length <= 10) {
-        deck = resetCards(deck);
+        deck = resetCards(deck, decksTotal);
         deck = shuffleDeck(deck);
     }
     return deck;
