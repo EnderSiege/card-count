@@ -6,7 +6,8 @@ const newBtn = document.getElementById("new-round");
 // Deck array starts empty
 let deck = [],
     player = [],
-    dealer = [];
+    dealer = [],
+    runningCount;
 
 // Shuffle the deck array
 function shuffleDeck(array) {
@@ -67,6 +68,11 @@ function resetCards(array) {
 // Show the number of remaining cards in the deck
 function remainingCards(deck) {
     console.log("There are " + deck.length + " cards remaining in the deck.");
+}
+
+// Show the number of remaining decks in play
+function remainingDecks(deck) {
+    console.log("There are " + (Math.floor((deck.length) / 52) + 1) + " remaining decks.");
 }
 
 // Fisher-Yates Shuffle
@@ -135,6 +141,7 @@ function announcePlayerHand() {
     console.log(player);
     console.log(countHand(player));
     remainingCards(shuffled);
+    remainingDecks(shuffled);
     checkBlackjack();
 }
 
