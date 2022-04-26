@@ -1,8 +1,8 @@
 // "Hit Me" and "Stand" buttons
-const hitMeBtn = document.getElementById("hit-me");
-const standBtn = document.getElementById("stand");
-const newBtn = document.getElementById("new-round");
-const shareCount = document.getElementById("share-count");
+const   hitMeBtn = document.getElementById("hit-me"),
+        standBtn = document.getElementById("stand"),
+        newBtn = document.getElementById("new-round"),
+        shareCount = document.getElementById("share-count");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -57,7 +57,7 @@ function shuffleDeck(array, decks) {
 
     // Reset the count
     runningCount = 0;
-    
+
     return array;
 }
 
