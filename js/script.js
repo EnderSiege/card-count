@@ -38,7 +38,7 @@ function updateCount(card) {
 
 // Share the count
 function shareCurrentCount() {
-    runningCountEl.innerHTML = runningCount;
+    runningCountEl.textContent = runningCount;
 }
 
 // share-count button event listener
@@ -107,12 +107,12 @@ function resetCards(array,decks) {
 
 // Show the number of remaining cards in the deck
 function remainingCards(deck) {
-    remainingCardsEl.innerHTML = deck.length;
+    remainingCardsEl.textContent = deck.length;
 }
 
 // Show the number of remaining decks in play
 function remainingDecks(deck) {
-    remainingDecksEl.innerHTML = (Math.floor((deck.length) / 52) + 1);
+    remainingDecksEl.textContent = (Math.floor((deck.length) / 52) + 1);
 }
 
 // Fisher-Yates Shuffle
