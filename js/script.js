@@ -55,6 +55,9 @@ function shuffleDeck(array, decks) {
     // Perform the shuffle
     array = shuffleCards(array);
 
+    // Reset the count
+    runningCount = 0;
+    
     return array;
 }
 
