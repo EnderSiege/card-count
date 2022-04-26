@@ -22,6 +22,7 @@ function updateCount(card) {
         case '5':
         case '6':
             runningCount ++;
+            console.log("Count + 1");
             break;
         case '10':
         case 'J':
@@ -29,6 +30,7 @@ function updateCount(card) {
         case 'K':
         case 'A':
             runningCount --;
+            console.log("Count - 1");
             break;
         default:
             break;
@@ -134,6 +136,7 @@ function shuffleCards(array) {
 function getCard(deck) {
     // Pull card from the deck array
     const card = deck.pop();
+    console.log(card + " drawn");
 
     // Update the game count
     updateCount(card);
