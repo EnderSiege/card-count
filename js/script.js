@@ -106,7 +106,7 @@ function resetCards(array,decks) {
 
 // Show the number of remaining cards in the deck
 function remainingCards(deck) {
-    console.log("There are " + deck.length + " cards remaining in the deck.");
+    remainingCardsElem.innerHTML = deck.length;
 }
 
 // Show the number of remaining decks in play
