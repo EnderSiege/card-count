@@ -53,6 +53,11 @@ function resetCards(array) {
     return array;
 }
 
+// Show the number of remaining cards in the deck
+function remainingCards(deck) {
+    console.log("There are " + deck.length + " cards remaining in the deck.");
+}
+
 // Fisher-Yates Shuffle
 // https://bost.ocks.org/mike/shuffle/
 function shuffleCards(array) {
@@ -118,6 +123,7 @@ function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
     console.log(countHand(player));
+    remainingCards(shuffled);
     checkBlackjack();
 }
 
