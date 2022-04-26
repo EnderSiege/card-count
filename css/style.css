@@ -61,6 +61,9 @@ li {
 
 .play-area-div {
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .dealer-area {
@@ -69,4 +72,16 @@ li {
 
 .player-area {
     /* background-color: blue; */
+}
+
+.playing-card {
+    background-color: white;
+    font-size: 1.8rem;
+    padding: 3rem 1.4rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
