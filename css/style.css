@@ -34,11 +34,12 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    color: white;
 }
 
 .info-section {
     top: 0;
-    padding: 0.4rem;
+    padding-top: 0.6rem;
 }
 
 .button-row {
