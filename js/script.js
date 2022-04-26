@@ -269,10 +269,10 @@ function stand(deck) {
 
 }
 
-function checkDeck(deck, decksTotal) {
+function checkDeck(deck) {
     if (deck.length <= 10) {
-        deck = resetCards(deck, decksTotal);
-        deck = shuffleDeck(deck);
+        deck = resetCards(deck, decksInPlay);
+        deck = shuffleDeck(deck, decksInPlay);
     }
     return deck;
 }
