@@ -2,7 +2,7 @@
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         newBtn = document.getElementById("new-round"),
-        shareCount = document.getElementById("share-count");
+        runningCountElem = document.getElementById("running-count");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -40,7 +40,7 @@ function shareCurrentCount() {
 }
 
 // share-count button event listener
-shareCount.addEventListener("click", function() {
+runningCountElem.addEventListener("click", function() {
     shareCurrentCount();
 })
 
