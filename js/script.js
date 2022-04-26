@@ -112,7 +112,7 @@ function remainingCards(deck) {
 
 // Show the number of remaining decks in play
 function remainingDecks(deck) {
-    console.log("There are " + (Math.floor((deck.length) / 52) + 1) + " remaining decks.");
+    remainingDecksEl.innerHTML = (Math.floor((deck.length) / 52) + 1);
 }
 
 // Fisher-Yates Shuffle
