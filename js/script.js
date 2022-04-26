@@ -245,8 +245,12 @@ function stand(deck) {
 
 }
 
-function dealDealer() {
-    
+function checkDeck(deck) {
+    if (deck.length <= 10) {
+        deck = resetCards(deck);
+        deck = shuffleDeck(deck);
+    }
+    return deck;
 }
 
 // "New" button event listener
@@ -256,6 +260,9 @@ newBtn.addEventListener("click", function() {
 
 // Function for the "New" button
 function newHand() {
+    // Checks whether enough cards remain in the deck
+    shuffled = checkDeck(shuffled);
+
     // Deals new hands without shuffling
     nextHand();
 
