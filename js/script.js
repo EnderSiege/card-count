@@ -35,13 +35,13 @@ function updateCount(card) {
 }
 
 // Share the count
-function shareCount() {
+function shareCurrentCount() {
     console.log("The current count is " + runningCount);
 }
 
 // share-count button event listener
 shareCount.addEventListener("click", function() {
-    newHand();
+    shareCurrentCount();
 })
 
 // Shuffle the deck array
