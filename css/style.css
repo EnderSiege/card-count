@@ -50,3 +50,23 @@ li {
     flex-grow: 1;
     padding: 1rem 0;
 }
+
+.play-area {
+    /* background-color: white; */
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.play-area-div {
+    flex-grow: 1;
+}
+
+.dealer-area {
+    /* background-color: red; */
+}
+
+.player-area {
+    /* background-color: blue; */
+}
