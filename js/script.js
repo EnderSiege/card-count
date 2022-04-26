@@ -2,8 +2,9 @@
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         newBtn = document.getElementById("new-round"),
-        runningCountElem = document.getElementById("running-count"),
-        remainingCardsElem = document.getElementById("cards-rem");
+        runningCountEl = document.getElementById("running-count"),
+        remainingCardsEl = document.getElementById("cards-rem"),
+        remainingDecksEl = document.getElementById("decks-rem");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -37,7 +38,7 @@ function updateCount(card) {
 
 // Share the count
 function shareCurrentCount() {
-    runningCountElem.innerHTML = runningCount;
+    runningCountEl.innerHTML = runningCount;
 }
 
 // share-count button event listener
@@ -106,7 +107,7 @@ function resetCards(array,decks) {
 
 // Show the number of remaining cards in the deck
 function remainingCards(deck) {
-    remainingCardsElem.innerHTML = deck.length;
+    remainingCardsEl.innerHTML = deck.length;
 }
 
 // Show the number of remaining decks in play
