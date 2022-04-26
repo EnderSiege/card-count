@@ -2,12 +2,13 @@
 const hitMeBtn = document.getElementById("hit-me");
 const standBtn = document.getElementById("stand");
 const newBtn = document.getElementById("new-round");
+const showCount = document.getElementById("show-count");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
     player = [],
     dealer = [],
-    runningCount,
+    runningCount = 0,
     decksInPlay = 1;
 
 // Update the count
@@ -31,6 +32,11 @@ function updateCount(card) {
             break;
     }
 
+}
+
+// Share the count
+function shareCount() {
+    console.log("The current count is " + runningCount);
 }
 
 // Shuffle the deck array
