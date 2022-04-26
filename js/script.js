@@ -3,7 +3,7 @@ const hitMeBtn = document.getElementById("hit-me");
 const standBtn = document.getElementById("stand");
 const newBtn = document.getElementById("new-round");
 
-// Deck array starts empty
+// Deck, player, and dealer arrays starts empty
 let deck = [],
     player = [],
     dealer = [],
@@ -51,7 +51,7 @@ function resetCards(array) {
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",
         "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-    const decksInPlay = 8;
+    const decksInPlay = 1;
 
     array = [];
 
