@@ -93,7 +93,8 @@ li {
 .announce {
     position:fixed;
     top: 0; left: 0;
-    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    transform: translate(calc(50vw - 50%), calc(42vh - 42%));
+    z-index: 1;
     background-color: black;
     color: white;
     border: 2px solid white;
