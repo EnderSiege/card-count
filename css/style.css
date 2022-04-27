@@ -151,7 +151,7 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
 }
 
 .chips {
@@ -192,9 +192,17 @@ li {
     background: rgba(255, 255, 255, 0.3);
 }
 
+.player-bet,
 .player-bank {
     text-align: center;
-    font-size: 1.5rem;
     color: white;
     text-shadow: 2px 2px 2px black;
+}
+
+.player-bet {
+    font-size: 1.4rem;
+}
+
+.player-bank {
+    font-size: 1.5rem;
 }
