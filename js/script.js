@@ -159,6 +159,7 @@ function dealCards(deck) {
     player.push(getCard(deck));
     dealer.push(getCard(deck));
     
+    // Send array values to UI
     updatePlayArea();
 }
 
@@ -266,6 +267,9 @@ function hitMe(deck) {
 
         // Deal player a card
         player.push(getCard(deck));
+
+        // Send array values to UI
+        updatePlayArea();
 
         // Display dealer cards and count
         announceDealerHand();
