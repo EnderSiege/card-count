@@ -83,8 +83,8 @@ function nextHand() {
 function clearHands() {
     player = [],
     dealer = [],
-    dealerArea.innerHTML = "",
-    playerArea.innerHTML = "";
+    dealerCardsArea.innerHTML = "",
+    playerCardsArea.innerHTML = "";
 }
 
 // Reset the cards in the deck
@@ -168,16 +168,16 @@ function dealCards(deck) {
 }
 
 function updatePlayArea() {
-    dealerArea.innerHTML = "",
-    playerArea.innerHTML = "";
+    dealerCardsArea.innerHTML = "",
+    playerCardsArea.innerHTML = "";
     for (let i = 0; i < player.length; i++) {
-        playerArea.innerHTML += 
+        playerCardsArea.innerHTML += 
             `<div class="playing-card">
                 <p>${player[i]}</p>
             </div>`
     }
     for (let i = 0; i < dealer.length; i++) {
-        dealerArea.innerHTML += 
+        dealerCardsArea.innerHTML += 
             `<div class="playing-card">
                 <p>${dealer[i]}</p>
             </div>`
