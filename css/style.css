@@ -194,4 +194,7 @@ li {
 
 .player-bank {
     text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
