@@ -29,54 +29,58 @@
         <li>7, 8, 9: 0</li>
         <li>10, J, Q, K, A: -1</li>
     </ul> -->
-    <div class="play-area">
-        <div class="dealer-area play-area-div" id="dealer-area">
-            <div id="dealer-cards-area" class="dealer-cards-area cards-areas">
-
+    <div class="visible-area">
+        <div class="play-area">
+            <div class="dealer-area play-area-div" id="dealer-area">
+                <div id="dealer-cards-area" class="dealer-cards-area cards-areas">
+    
+                </div>
+                <div id="dealer-count" class="dealer-count counts">
+                    <p>
+                        value:<br>
+                        <span id="dealer-hand-value">?</span>
+                    </p>
+                    <p>
+                        count:<br>
+                        <span id="dealer-hand-count">?</span>
+                    </p>
+                </div>
             </div>
-            <div id="dealer-count" class="dealer-count counts">
-                <p>
-                    value:<br>
-                    <span id="dealer-hand-value">?</span>
-                </p>
-                <p>
-                    count:<br>
-                    <span id="dealer-hand-count">?</span>
-                </p>
+            <div class="player-area play-area-div" id="player-area">
+                <div id="player-cards-area" class="player-cards-area cards-areas">
+    
+                </div>
+                <div id="player-count" class="player-count counts">
+                    <p>
+                        value:<br>
+                        <span id="player-hand-value">?</span>
+                    </p>
+                    <p>
+                        count:<br>
+                        <span id="player-hand-count">?</span>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="player-area play-area-div" id="player-area">
-            <div id="player-cards-area" class="player-cards-area cards-areas">
-
+        <div class="chips-and-bank">
+            <div class="chips-row">
+                <div id="bet1" class="bet1 chips">
+                    <p>$1</p>
+                </div>
+                <div id="bet5" class="bet5 chips">
+                    <p>$5</p>
+                </div>
+                <div id="bet25" class="bet25 chips">
+                    <p>$25</p>
+                </div>
+                <div id="bet100" class="bet100 chips">
+                    <p>$100</p>
+                </div>
             </div>
-            <div id="player-count" class="player-count counts">
-                <p>
-                    value:<br>
-                    <span id="player-hand-value">?</span>
-                </p>
-                <p>
-                    count:<br>
-                    <span id="player-hand-count">?</span>
-                </p>
+            <div class="player-bank">
+                Player Bank: $100
             </div>
         </div>
-    </div>
-    <div class="chips-row">
-        <div id="bet1" class="bet1 chips">
-            <p>$1</p>
-        </div>
-        <div id="bet5" class="bet5 chips">
-            <p>$5</p>
-        </div>
-        <div id="bet25" class="bet25 chips">
-            <p>$25</p>
-        </div>
-        <div id="bet100" class="bet100 chips">
-            <p>$100</p>
-        </div>
-    </div>
-    <div class="player-bank">
-        Player Bank: $100
     </div>
     <div class="button-row">
         <button id="new-round">

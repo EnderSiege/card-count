@@ -13,6 +13,13 @@ body {
     padding-top: 4rem;
 }
 
+.visible-area {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 button {
     font-size: 2rem;
     /* padding: 0.5rem 1rem; */
