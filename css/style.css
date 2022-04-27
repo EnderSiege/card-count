@@ -62,13 +62,18 @@ li {
 }
 
 .play-area-div,
-.cards-areas {
-    flex-grow: 1;
+.cards-areas,
+.chips-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 6px;
+}
+
+.play-area-div,
+.cards-areas {
+    flex-grow: 1;
 }
 
 .dealer-area {
@@ -131,3 +136,4 @@ li {
 .flipped {
     display: none;
 }
+
