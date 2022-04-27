@@ -6,7 +6,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
         remainingCardsEl = document.getElementById("cards-rem"),
         remainingDecksEl = document.getElementById("decks-rem"),
         dealerArea = document.getElementById("dealer-area"),
-        playerArea = document.getElementById("player-area");
+        playerArea = document.getElementById("player-area"),
+        announceEl = document.getElementById("announce");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -357,7 +358,7 @@ function newHand() {
     // Announce both hands
     announceDealerHand();
     announcePlayerHand();
-    
+
     // Send array values to UI
     updatePlayArea();
 }
