@@ -234,7 +234,6 @@ function checkBlackjack() {
     }
 }
 
-
 // Function calls below
 
 console.log(deck);
@@ -349,6 +348,9 @@ newBtn.addEventListener("click", function() {
 
 // Function for the "New" button
 function newHand() {
+    // Hide announcement
+    announceEl.style = "display: none";
+
     // Checks whether enough cards remain in the deck
     shuffled = checkDeck(shuffled);
 
@@ -361,4 +363,10 @@ function newHand() {
 
     // Send array values to UI
     updatePlayArea();
+}
+
+// Announce function
+function announce(message) {
+    announceEl.textContent = message;
+    announceEl.style = "display: block";
 }
