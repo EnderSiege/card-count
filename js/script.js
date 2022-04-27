@@ -6,7 +6,9 @@ const   hitMeBtn = document.getElementById("hit-me"),
         remainingCardsEl = document.getElementById("cards-rem"),
         remainingDecksEl = document.getElementById("decks-rem"),
         dealerArea = document.getElementById("dealer-area"),
+        dealerCardsArea = document.getElementById("dealer-cards-area"),
         playerArea = document.getElementById("player-area"),
+        playerCardsArea = document.getElementById("player-cards-area"),
         announceEl = document.getElementById("announce");
 
 // Deck, player, and dealer arrays starts empty
