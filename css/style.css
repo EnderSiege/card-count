@@ -146,6 +146,10 @@ li {
     text-align: center;
 }
 
+.chips p {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .bet1 {
     background-color: white;
 }
