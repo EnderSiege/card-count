@@ -97,6 +97,7 @@ li {
     border: 2px solid white;
     font-size: 2rem;
     padding: 0.5rem 1rem;
+    max-width: 90%;
 }
 
 .announce-toggle {
