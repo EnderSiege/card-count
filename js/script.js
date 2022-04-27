@@ -14,7 +14,8 @@ let deck = [],
     player = [],
     dealer = [],
     runningCount = 0,
-    decksInPlay = 1;
+    decksInPlay = 1,
+    message;
 
 // Clear play areas
 clearHands();
@@ -226,11 +227,11 @@ function announceDealerHand() {
 
 function checkBlackjack() {
     if (countHand(player) === 21 && countHand(dealer) === 21) {
-        console.log("Both you and the dealer have Blackjack");
+        announce("Both you and the dealer have Blackjack");
     } else if (countHand(dealer) === 21) {
-        console.log("Dealer has Blackjack");
+        announce("Dealer has Blackjack");
     } else if (countHand(player) === 21) {
-        console.log("You have Blackjack!");
+        announce("You have Blackjack!");
     }
 }
 
@@ -260,9 +261,9 @@ hitMeBtn.addEventListener("click", function() {
 function hitMe(deck) {
     // Ensure player does not have 21 or more cards, then carry on
     if (countHand(player) > 21) {
-        console.log("Cannot deal you a card, you busted!");
+        announce("Cannot deal you a card, you busted!");
     } else if (countHand(player) === 21) {
-        console.log("Cannot deal you a card, you have Blackjack!");
+        announce("Cannot deal you a card, you have Blackjack!");
     } else {
         // Inform player that another card is being dealt
         console.log("Dealing a card!");
@@ -282,9 +283,9 @@ function hitMe(deck) {
 
     // Announce if player has Blackjack or bust
     if (countHand(player) > 21) {
-        console.log("You busted!");
+        announce("You busted!");
     } else if (countHand(player === 21)) {
-        console.logI("You have Blackjack!");
+        announce("You have Blackjack!");
     }
 }
 
@@ -298,12 +299,12 @@ function stand(deck) {
     console.log("You choose to stand");
 // Ensure player does not have 21 or more cards, then carry on
     if (countHand(player) > 21) {
-        console.log("You busted!");
+        announce("You busted!");
     } else if (countHand(player) === 21) {
         if (countHand(dealer) === 21) {
-            console.log("Both you and the dealer have Blackjack!");
+            announce("Both you and the dealer have Blackjack!");
         } else {
-            console.log("Congratulations! You win this hand!");
+            announce("Congratulations! You win this hand!");
         }
     } else {
         var dealInterval = setInterval(function() {
@@ -318,11 +319,11 @@ function stand(deck) {
             } else {
                 lessThan = false;
                 if (countHand(dealer) > 21) {
-                    console.log("Dealer busted! You win this hand!");
+                    announce("Dealer busted! You win this hand!");
                 } else if (countHand(dealer) === 21) {
-                    console.log("You lose...");
+                    announce("You lose...");
                 } else {
-                    console.log("Dealer wins this hand.");
+                    announce("Dealer wins this hand.");
                 }
 
                 clearInterval(dealInterval);
@@ -367,6 +368,7 @@ function newHand() {
 
 // Announce function
 function announce(message) {
+    console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
 }
