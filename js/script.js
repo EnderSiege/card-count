@@ -164,6 +164,8 @@ function dealCards(deck) {
 }
 
 function updatePlayArea() {
+    dealerArea.innerHTML = "",
+    playerArea.innerHTML = "";
     for (let i = 0; i < player.length; i++) {
         playerArea.innerHTML += 
             `<div class="playing-card">
@@ -311,6 +313,8 @@ function stand(deck) {
                 dealer.push(getCard(shuffled));
                 announceDealerHand();
                 announcePlayerHand();
+                // Send array values to UI
+                updatePlayArea();
             } else {
                 lessThan = false;
                 if (countHand(dealer) > 21) {
