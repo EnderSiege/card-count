@@ -357,4 +357,7 @@ function newHand() {
     // Announce both hands
     announceDealerHand();
     announcePlayerHand();
+    
+    // Send array values to UI
+    updatePlayArea();
 }
