@@ -54,7 +54,7 @@ li {
 
 .play-area {
     /* background-color: white; */
-    height: 70vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
