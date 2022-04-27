@@ -145,3 +145,19 @@ li {
     border: 2px solid black;
     text-align: center;
 }
+
+.bet5 {
+    background-color: red;
+}
+
+.bet10 {
+    background-color: green;
+}
+
+.bet25 {
+    background-color: blue;
+}
+
+.bet100 {
+
+}
