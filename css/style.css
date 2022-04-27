@@ -59,7 +59,8 @@ li {
     justify-content: center;
 }
 
-.play-area-div {
+.play-area-div,
+.cards-areas {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
