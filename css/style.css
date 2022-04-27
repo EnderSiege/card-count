@@ -104,3 +104,8 @@ li {
 .announce-toggle {
     display: none;
 }
+
+.counts {
+    margin-right: 1rem;
+    color: white;
+}
