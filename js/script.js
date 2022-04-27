@@ -158,6 +158,23 @@ function dealCards(deck) {
     dealer.push(getCard(deck));
     player.push(getCard(deck));
     dealer.push(getCard(deck));
+    
+    updatePlayArea();
+}
+
+function updatePlayArea() {
+    for (let i = 0; i < player.length; i++) {
+        playerArea.innerHTML += 
+            `<div class="playing-card">
+                <p>${player[i]}</p>
+            </div>`
+    }
+    for (let i = 0; i < dealer.length; i++) {
+        dealerArea.innerHTML += 
+            `<div class="playing-card">
+                <p>${dealer[i]}</p>
+            </div>`
+    }
 }
 
 function countHand(hand) {
