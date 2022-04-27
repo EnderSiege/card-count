@@ -147,6 +147,13 @@ li {
     display: none;
 }
 
+.chips-and-bank {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 .chips {
     width: 80px;
     height: 80px;
