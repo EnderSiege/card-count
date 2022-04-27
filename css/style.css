@@ -79,8 +79,8 @@ li {
 .playing-card {
     background-color: white;
     font-size: 1.8rem;
-    padding: 3rem 1.4rem;
-    height: 4rem;
+    height: 6rem;
+    width: 3.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
