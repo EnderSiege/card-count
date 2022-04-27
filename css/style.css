@@ -118,3 +118,7 @@ li {
 .counts p:first-child {
     margin-bottom: 1rem;
 }
+
+.flipped {
+    display: none;
+}
