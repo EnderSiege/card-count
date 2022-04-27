@@ -4,7 +4,9 @@ const   hitMeBtn = document.getElementById("hit-me"),
         newBtn = document.getElementById("new-round"),
         runningCountEl = document.getElementById("running-count"),
         remainingCardsEl = document.getElementById("cards-rem"),
-        remainingDecksEl = document.getElementById("decks-rem");
+        remainingDecksEl = document.getElementById("decks-rem"),
+        dealerArea = document.getElementById("dealer-area"),
+        playerArea = document.getElementById("player-area");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -12,6 +14,10 @@ let deck = [],
     dealer = [],
     runningCount = 0,
     decksInPlay = 1;
+
+// Clear play areas
+dealerArea.innerHTML = "";
+playerArea.innerHTML = "";
 
 // Update the count
 function updateCount(card) {
