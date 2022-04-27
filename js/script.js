@@ -16,8 +16,7 @@ let deck = [],
     decksInPlay = 1;
 
 // Clear play areas
-dealerArea.innerHTML = "";
-playerArea.innerHTML = "";
+clearHands();
 
 // Update the count
 function updateCount(card) {
@@ -79,7 +78,9 @@ function nextHand() {
 
 function clearHands() {
     player = [],
-    dealer = [];
+    dealer = [],
+    dealerArea.innerHTML = "",
+    playerArea.innerHTML = "";
 }
 
 // Reset the cards in the deck
