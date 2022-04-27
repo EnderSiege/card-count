@@ -87,3 +87,15 @@ li {
     align-items: center;
     border-radius: 10px;
 }
+
+.announce {
+    display: none;
+    position:fixed;
+    top: 0; left: 0;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+}
