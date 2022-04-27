@@ -89,7 +89,6 @@ li {
 }
 
 .announce {
-    display: none;
     position:fixed;
     top: 0; left: 0;
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
@@ -98,4 +97,8 @@ li {
     border: 2px solid white;
     font-size: 2rem;
     padding: 0.5rem 1rem;
+}
+
+.announce-toggle {
+    display: none;
 }
