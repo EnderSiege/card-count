@@ -450,18 +450,22 @@ function bet100() {
 // Chips event listeners
 bet1El.addEventListener("click", function() {
     bet1();
+    updateChips();
 });
 
 bet5El.addEventListener("click", function() {
     bet5();
+    updateChips();
 });
 
 bet25El.addEventListener("click", function() {
     bet25();
+    updateChips();
 });
 
 bet100El.addEventListener("click", function() {
     bet100();
+    updateChips();
 });
 
 // Player bet UI update
@@ -472,4 +476,22 @@ function playerBetUpdate() {
 // Player bank UI update
 function playerBankUpdate() {
     playerBankEl.textContent = playerBank;
+}
+
+// Update chips based on bank
+function updateChips() {
+    if (playerBank >= 100) {
+        bet1.style = "display: block;";
+        bet5.style = "display: block;";
+        bet25.style = "display: block;";
+        bet100.style = "display: block;";
+    } else if (playerBank >= 25) {
+        bet100.style = "display: none;";
+    } else if (playerBank >= 5) {
+        bet25.style = "display: none;";
+    } else if (playerBank >= 1) {
+        bet5.style = "display: none;";
+    } else {
+        bet1.style = "display: none;";
+    }
 }
