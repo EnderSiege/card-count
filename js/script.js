@@ -14,7 +14,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
         bet5El = document.getElementById("bet5"),
         bet25El = document.getElementById("bet25"),
         bet100El = document.getElementById("bet100"),
-        playerBetEl = document.getElementById("player-bet-amt");
+        playerBetEl = document.getElementById("player-bet-amt"),
+        playerBankEl = document.getElementById("player-bank-amt");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -23,7 +24,8 @@ let deck = [],
     runningCount = 0,
     decksInPlay = 1,
     message,
-    playerBet = 0;
+    playerBet = 0,
+    playerBank = 0;
 
 playerBetEl.textContent = 0;
 
