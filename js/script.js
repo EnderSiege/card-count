@@ -423,28 +423,28 @@ function bet1() {
     playerBet ++;
     playerBank --;
     playerBetUpdate();
-    playerBankUpdate;
+    playerBankUpdate();
 }
 
 function bet5() {
     playerBet += 5;
     playerBank -= 5;
     playerBetUpdate();
-    playerBankUpdate;
+    playerBankUpdate();
 }
 
 function bet25() {
     playerBet += 25;
     playerBank -= 25;
     playerBetUpdate();
-    playerBankUpdate;
+    playerBankUpdate();
 }
 
 function bet100() {
     playerBet += 100;
     playerBank -= 100;
     playerBetUpdate();
-    playerBankUpdate;
+    playerBankUpdate();
 }
 
 // Chips event listeners
