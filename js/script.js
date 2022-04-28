@@ -25,9 +25,10 @@ let deck = [],
     decksInPlay = 1,
     message,
     playerBet = 0,
-    playerBank = 0;
+    playerBank = 100;
 
-playerBetEl.textContent = 0;
+playerBetUpdate();
+playerBankUpdate();
 
 // Clear play areas
 clearHands();
@@ -445,7 +446,12 @@ bet100El.addEventListener("click", function() {
     bet100();
 });
 
-// Player bet UI update function
+// Player bet UI update
 function playerBetUpdate() {
     playerBetEl.textContent = playerBet;
+}
+
+// Player bank UI update
+function playerBankUpdate() {
+    playerBankEl.textContent = playerBank;
 }
