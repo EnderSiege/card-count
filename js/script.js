@@ -387,10 +387,12 @@ function announce(message) {
 function hideHitStand() {
     hitMeBtn.style = "display: none;";
     standBtn.style = "display: none;";
+    newBtn.textContent = "Deal";
 }
 
 // Restore the Hit and Stand buttons
 function restoreHitStand() {
     hitMeBtn.style = "display: block;";
     standBtn.style = "display: block;";
+    newBtn.textContent = "New";
 }
