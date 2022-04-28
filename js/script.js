@@ -370,6 +370,9 @@ function newHand() {
 
     // Send array values to UI
     updatePlayArea();
+
+    // Restore Hit/Stand buttons
+    restoreHitStand();
 }
 
 // Announce function
@@ -377,4 +380,17 @@ function announce(message) {
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
+    hideHitStand();
+}
+
+// Prevent Hit or Stand from being used
+function hideHitStand() {
+    hitMeBtn.style = "display: none;";
+    standBtn.style = "display: none;";
+}
+
+// Restore the Hit and Stand buttons
+function restoreHitStand() {
+    hitMeBtn.style = "display: block;";
+    standBtn.style = "display: block;";
 }
