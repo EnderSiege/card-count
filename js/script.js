@@ -401,5 +401,36 @@ function restoreHitStand() {
     newBtn.textContent = "New";
 }
 
-// Chips functionality
-function 
+// Chips functions
+function bet1() {
+
+}
+
+function bet5() {
+    
+}
+
+function bet25() {
+    
+}
+
+function bet100() {
+    
+}
+
+// Chips event listeners
+bet1El.addEventListener("click", function() {
+    bet1();
+});
+
+bet5El.addEventListener("click", function() {
+    bet5();
+});
+
+bet25El.addEventListener("click", function() {
+    bet25();
+});
+
+bet100El.addEventListener("click", function() {
+    bet100();
+});
