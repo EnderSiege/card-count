@@ -13,7 +13,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
         bet1El = document.getElementById("bet1"),
         bet5El = document.getElementById("bet5"),
         bet25El = document.getElementById("bet25"),
-        bet100El = document.getElementById("bet100");
+        bet100El = document.getElementById("bet100"),
+        playerBetEl = document.getElementById("player-bet-amt");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -21,7 +22,10 @@ let deck = [],
     dealer = [],
     runningCount = 0,
     decksInPlay = 1,
-    message;
+    message,
+    playerBet = 0;
+
+playerBetEl.textContent = 0;
 
 // Clear play areas
 clearHands();
@@ -403,7 +407,7 @@ function restoreHitStand() {
 
 // Chips functions
 function bet1() {
-
+    playerBetEl.textContent ++;
 }
 
 function bet5() {
@@ -434,3 +438,8 @@ bet25El.addEventListener("click", function() {
 bet100El.addEventListener("click", function() {
     bet100();
 });
+
+// Player bet function
+function playerBet() {
+    
+}
