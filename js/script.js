@@ -10,10 +10,10 @@ const   hitMeBtn = document.getElementById("hit-me"),
         playerArea = document.getElementById("player-area"),
         playerCardsArea = document.getElementById("player-cards-area"),
         announceEl = document.getElementById("announce"),
-        bet1 = document.getElementById("bet1"),
-        bet5 = document.getElementById("bet5"),
-        bet25 = document.getElementById("bet25"),
-        bet100 = document.getElementById("bet100");
+        bet1El = document.getElementById("bet1"),
+        bet5El = document.getElementById("bet5"),
+        bet25El = document.getElementById("bet25"),
+        bet100El = document.getElementById("bet100");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -402,3 +402,4 @@ function restoreHitStand() {
 }
 
 // Chips functionality
+function 
