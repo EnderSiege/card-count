@@ -376,6 +376,9 @@ newBtn.addEventListener("click", function() {
 
 // Function for the "New" button
 function newHand() {
+    // Restore Hit/Stand buttons
+    restoreHitStand();
+    
     // Hide announcement
     announceEl.style = "display: none";
 
@@ -391,9 +394,6 @@ function newHand() {
 
     // Send array values to UI
     updatePlayArea();
-
-    // Restore Hit/Stand buttons
-    restoreHitStand();
 }
 
 // Announce function
