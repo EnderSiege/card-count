@@ -407,19 +407,23 @@ function restoreHitStand() {
 
 // Chips functions
 function bet1() {
-    playerBetEl.textContent ++;
+    playerBet ++;
+    playerBetUpdate();
 }
 
 function bet5() {
-    
+    playerBet += 5;
+    playerBetUpdate();
 }
 
 function bet25() {
-    
+    playerBet += 25;
+    playerBetUpdate();
 }
 
 function bet100() {
-    
+    playerBet += 100;
+    playerBetUpdate();
 }
 
 // Chips event listeners
@@ -439,7 +443,7 @@ bet100El.addEventListener("click", function() {
     bet100();
 });
 
-// Player bet function
-function playerBet() {
-    
+// Player bet UI update function
+function playerBetUpdate() {
+    playerBetEl.textContent = playerBet;
 }
