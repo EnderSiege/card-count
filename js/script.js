@@ -481,17 +481,23 @@ function playerBankUpdate() {
 // Update chips based on bank
 function updateChips() {
     if (playerBank >= 100) {
-        bet1.style = "display: block;";
-        bet5.style = "display: block;";
-        bet25.style = "display: block;";
-        bet100.style = "display: block;";
-    } else if (playerBank >= 25) {
-        bet100.style = "display: none;";
+        bet1El.style = "display: block;";
+        bet5El.style = "display: block;";
+        bet25El.style = "display: block;";
+        bet100El.style = "display: block;";
+    } if (playerBank >= 25) {
+        bet100El.style = "display: none;";
     } else if (playerBank >= 5) {
-        bet25.style = "display: none;";
+        bet100El.style = "display: none;";
+        bet25El.style = "display: none;";
     } else if (playerBank >= 1) {
-        bet5.style = "display: none;";
+        bet100El.style = "display: none;";
+        bet25El.style = "display: none;";
+        bet5El.style = "display: none;";
     } else {
-        bet1.style = "display: none;";
+        bet100El.style = "display: none;";
+        bet25El.style = "display: none;";
+        bet5El.style = "display: none;";
+        bet1El.style = "display: none;";
     }
 }
