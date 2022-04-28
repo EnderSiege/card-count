@@ -378,7 +378,7 @@ newBtn.addEventListener("click", function() {
 function newHand() {
     // Restore Hit/Stand buttons
     restoreHitStand();
-    
+
     // Hide announcement
     announceEl.style = "display: none";
 
@@ -421,22 +421,30 @@ function restoreHitStand() {
 // Chips functions
 function bet1() {
     playerBet ++;
+    playerBank --;
     playerBetUpdate();
+    playerBankUpdate;
 }
 
 function bet5() {
     playerBet += 5;
+    playerBank -= 5;
     playerBetUpdate();
+    playerBankUpdate;
 }
 
 function bet25() {
     playerBet += 25;
+    playerBank -= 25;
     playerBetUpdate();
+    playerBankUpdate;
 }
 
 function bet100() {
     playerBet += 100;
+    playerBank -= 100;
     playerBetUpdate();
+    playerBankUpdate;
 }
 
 // Chips event listeners
