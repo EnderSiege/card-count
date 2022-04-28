@@ -165,6 +165,9 @@ function dealCards(deck) {
     
     // Send array values to UI
     updatePlayArea();
+
+    // Check if someone has Blackjack
+    checkBlackjack();
 }
 
 function updatePlayArea() {
@@ -217,7 +220,6 @@ function announcePlayerHand() {
     console.log(countHand(player));
     remainingCards(shuffled);
     remainingDecks(shuffled);
-    checkBlackjack();
     shareCurrentCount();
 }
 
@@ -265,7 +267,7 @@ function hitMe(deck) {
     if (countHand(player) > 21) {
         announce("Cannot deal you a card, you busted!");
     } else if (countHand(player) === 21) {
-        announce("Cannot deal you a card, you have Blackjack!");
+        announce("Cannot deal you a card, you have 21!");
     } else {
         // Inform player that another card is being dealt
         console.log("Dealing a card!");
@@ -283,11 +285,11 @@ function hitMe(deck) {
         announcePlayerHand();
     }
 
-    // Announce if player has Blackjack or bust
+    // Announce if player has 21 or bust
     if (countHand(player) > 21) {
         announce("You busted!");
     } else if (countHand(player === 21)) {
-        announce("You have Blackjack!");
+        announce("You have 21!");
     }
 }
 
@@ -304,7 +306,9 @@ function stand(deck) {
         announce("You busted!");
     } else if (countHand(player) === 21) {
         if (countHand(dealer) === 21) {
-            announce("Both you and the dealer have Blackjack!");
+            announce("Both you and the dealer have 21!");
+        } else if (countHand(player) === countHand(dealer)) {
+            announce("Tie");
         } else {
             announce("Congratulations! You win this hand!");
         }
