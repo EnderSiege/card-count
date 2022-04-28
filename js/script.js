@@ -250,6 +250,14 @@ function checkBlackjack() {
     }
 }
 
+function check21() {
+    if (countHand(dealer) === 21) {
+        announce("Dealer has 21");
+    } else if (countHand(player) === 21) {
+        announce("You have 21!");
+    }
+}
+
 // Function calls below
 
 console.log(deck);
@@ -294,6 +302,8 @@ function hitMe(deck) {
 
         // Display player cards and count
         announcePlayerHand();
+
+        check21();
     }
 
     // Announce if player has 21 or bust
