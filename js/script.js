@@ -43,13 +43,14 @@ clearHands();
 
 // Update the count
 function updateCount(card) {
+    let count = 0;
     switch (card) {
         case '2':
         case '3':
         case '4':
         case '5':
         case '6':
-            runningCount ++;
+            count ++;
             console.log("Count + 1");
             break;
         case '10':
@@ -57,13 +58,14 @@ function updateCount(card) {
         case 'Q':
         case 'K':
         case 'A':
-            runningCount --;
+            count --;
             console.log("Count - 1");
             break;
         default:
             break;
     }
 
+    return count;
 }
 
 // Share the count
@@ -169,7 +171,7 @@ function getCard(deck) {
     console.log(card + " drawn");
 
     // Update the game count
-    updateCount(card);
+    runningCount += updateCount(card);
 
     // Send card out
     return card;
