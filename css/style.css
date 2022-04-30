@@ -48,6 +48,7 @@ li {
     top: 0;
     padding: 0.6rem;
     background-color: black;
+    min-height: 20px;
 }
 
 .button-row {

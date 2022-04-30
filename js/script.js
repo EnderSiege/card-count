@@ -16,10 +16,13 @@ const   hitMeBtn = document.getElementById("hit-me"),
         bet100El = document.getElementById("bet100"),
         playerBetEl = document.getElementById("player-bet-amt"),
         playerBankEl = document.getElementById("player-bank-amt"),
+        dealerValueCountEl = document.getElementById("dealer-count"),
         dealerValueEl = document.getElementById("dealer-hand-value"),
         dealerCountEl = document.getElementById("dealer-hand-count"),
+        playerValueCountEl = document.getElementById("player-count"),
         playerValueEl = document.getElementById("player-hand-value"),
-        playerCountEl = document.getElementById("player-hand-count");
+        playerCountEl = document.getElementById("player-hand-count"),
+        infoSection = document.getElementById("info-section");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -33,7 +36,8 @@ let deck = [],
     dealerValue,
     dealerCount = 0,
     playerValue,
-    playerCount = 0;
+    playerCount = 0
+    infoSectionActive = true;
 
 playerBetUpdate();
 playerBankUpdate();
@@ -539,3 +543,19 @@ function updateChips() {
         bet1El.style = "display: none;";
     }
 }
+
+// Info sections toggle
+// Doesn't quite work the way I want yet...
+infoSection.addEventListener("click", function() {
+    if (infoSectionActive) {
+        !infoSectionActive;
+        infoSection.style = "color: black;";
+        dealerValueCountEl.style = "display: none;";
+        playerValueCountEl.style = "display: none;";
+    } else {
+        !infoSectionActive;
+        infoSection.style = "color: white;";
+        dealerValueCountEl.style = "display: block;";
+        playerValueCountEl.style = "display: block;";
+    }
+})
