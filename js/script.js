@@ -31,9 +31,9 @@ let deck = [],
     playerBet = 0,
     playerBank = 100,
     dealerValue,
-    dealerCount,
+    dealerCount = 0,
     playerValue,
-    playerCount;
+    playerCount = 0;
 
 playerBetUpdate();
 playerBankUpdate();
@@ -240,7 +240,7 @@ function countHand(hand) {
     let count = 0;
 
     for (let i = 0; i < hand.length; i++) {
-        updateCount(count);
+        count += updateCount(hand[i]);
     }
 
     return count;
@@ -410,6 +410,10 @@ newBtn.addEventListener("click", function() {
 
 // Function for the "New" button
 function newHand() {
+    // Reset each hand count
+    dealerCount = 0,
+    playerCount = 0;
+
     // Restore Hit/Stand buttons
     restoreHitStand();
 
