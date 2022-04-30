@@ -236,6 +236,24 @@ function valueHand(hand) {
     return handCount;
 }
 
+function countHand(hand) {
+    let count = 0;
+
+    for (let i = 0; i < hand.length; i++) {
+        updateCount(count);
+    }
+
+    return count;
+}
+
+function countEachHand() {
+    dealerCount = countHand(dealer);
+    dealerCountEl.innerText = dealerCount;
+
+    playerCount = countHand(player);
+    playerCountEl.innerText = playerCount;
+}
+
 function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
