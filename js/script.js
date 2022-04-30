@@ -263,6 +263,7 @@ function announcePlayerHand() {
     remainingCards(shuffled);
     remainingDecks(shuffled);
     shareCurrentCount();
+    countEachHand();
 }
 
 function announceDealerHand() {
