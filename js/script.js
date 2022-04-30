@@ -236,8 +236,6 @@ function countHand(hand) {
     return handCount;
 }
 
-
-
 function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
@@ -376,8 +374,6 @@ function stand(deck) {
             }
         }, 1000);
         }
-
-
 }
 
 function checkDeck(deck) {
