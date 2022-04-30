@@ -209,7 +209,7 @@ function updatePlayArea() {
     }
 }
 
-function countHand(hand) {
+function valueHand(hand) {
     // Since Aces can be counted as a 1 or 11, they require a different method
     // I could set hasAce to boolean, but it's possible to have more than one Ace
     let hasAce = 0
@@ -239,7 +239,7 @@ function countHand(hand) {
 function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
-    playerValue = countHand(player);
+    playerValue = valueHand(player);
     console.log(playerValue);
     playerValueEl.innerText = playerValue;
     remainingCards(shuffled);
@@ -250,25 +250,25 @@ function announcePlayerHand() {
 function announceDealerHand() {
     console.log("Dealer cards:");
     console.log(dealer);
-    dealerValue = countHand(dealer);
+    dealerValue = valueHand(dealer);
     console.log(dealerValue);
     dealerValueEl.innerText = dealerValue;
 }
 
 function checkBlackjack() {
-    if (countHand(player) === 21 && countHand(dealer) === 21) {
+    if (valueHand(player) === 21 && valueHand(dealer) === 21) {
         announce("Both you and the dealer have Blackjack");
-    } else if (countHand(dealer) === 21) {
+    } else if (valueHand(dealer) === 21) {
         announce("Dealer has Blackjack");
-    } else if (countHand(player) === 21) {
+    } else if (valueHand(player) === 21) {
         announce("You have Blackjack!");
     }
 }
 
 function check21() {
-    if (countHand(dealer) === 21) {
+    if (valueHand(dealer) === 21) {
         announce("Dealer has 21");
-    } else if (countHand(player) === 21) {
+    } else if (valueHand(player) === 21) {
         announce("You have 21!");
     }
 }
@@ -298,9 +298,9 @@ hitMeBtn.addEventListener("click", function() {
 // Function for the "Hit Me" button
 function hitMe(deck) {
     // Ensure player does not have 21 or more cards, then carry on
-    if (countHand(player) > 21) {
+    if (valueHand(player) > 21) {
         announce("Cannot deal you a card, you busted!");
-    } else if (countHand(player) === 21) {
+    } else if (valueHand(player) === 21) {
         announce("Cannot deal you a card, you have 21!");
     } else {
         // Inform player that another card is being dealt
@@ -322,9 +322,9 @@ function hitMe(deck) {
     }
 
     // Announce if player has 21 or bust
-    if (countHand(player) > 21) {
+    if (valueHand(player) > 21) {
         announce("You busted!");
-    } else if (countHand(player === 21)) {
+    } else if (valueHand(player === 21)) {
         announce("You have 21!");
     }
 }
@@ -338,19 +338,19 @@ standBtn.addEventListener("click", function() {
 function stand(deck) {
     console.log("You choose to stand");
 // Ensure player does not have 21 or more cards, then carry on
-    if (countHand(player) > 21) {
+    if (valueHand(player) > 21) {
         announce("You busted!");
-    } else if (countHand(player) === 21) {
-        if (countHand(dealer) === 21) {
+    } else if (valueHand(player) === 21) {
+        if (valueHand(dealer) === 21) {
             announce("Both you and the dealer have 21!");
-        } else if (countHand(player) === countHand(dealer)) {
+        } else if (valueHand(player) === valueHand(dealer)) {
             announce("Tie");
         } else {
             announce("Congratulations! You win this hand!");
         }
     } else {
         var dealInterval = setInterval(function() {
-            if (countHand(dealer) < countHand(player)) {
+            if (valueHand(dealer) < valueHand(player)) {
                 // Deal a card to the dealer
                 console.log("Dealer is dealt a card...");
                 dealer.push(getCard(shuffled));
@@ -360,11 +360,11 @@ function stand(deck) {
                 updatePlayArea();
             } else {
                 lessThan = false;
-                if (countHand(dealer) > 21) {
+                if (valueHand(dealer) > 21) {
                     announce("Dealer busted! You win this hand!");
-                } else if (countHand(dealer) === 21) {
+                } else if (valueHand(dealer) === 21) {
                     announce("You lose...");
-                } else if (countHand(dealer) === countHand(player)) {
+                } else if (valueHand(dealer) === valueHand(player)) {
                     announce("Tie");
                 } else {
                     announce("Dealer wins this hand.");
