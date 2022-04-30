@@ -236,7 +236,9 @@ function countHand(hand) {
 function announcePlayerHand() {
     console.log("Player cards:");
     console.log(player);
-    console.log(countHand(player));
+    playerValue = countHand(player);
+    console.log(playerValue);
+    playerValueEl.innerText = playerValue;
     remainingCards(shuffled);
     remainingDecks(shuffled);
     shareCurrentCount();
@@ -245,7 +247,9 @@ function announcePlayerHand() {
 function announceDealerHand() {
     console.log("Dealer cards:");
     console.log(dealer);
-    console.log(countHand(dealer));
+    dealerValue = countHand(dealer);
+    console.log(dealerValue);
+    dealerValueEl.innerText = dealerValue;
 }
 
 function checkBlackjack() {
