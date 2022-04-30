@@ -29,7 +29,11 @@ let deck = [],
     decksInPlay = 1,
     message,
     playerBet = 0,
-    playerBank = 100;
+    playerBank = 100,
+    dealerValue,
+    dealerCount,
+    playerValue,
+    playerCount;
 
 playerBetUpdate();
 playerBankUpdate();
