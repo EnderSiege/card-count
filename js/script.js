@@ -347,7 +347,7 @@ function stand(deck) {
         }
     } else {
         var dealInterval = setInterval(function() {
-            if (countHand(dealer) <= countHand(player)) {
+            if (countHand(dealer) < countHand(player)) {
                 // Deal a card to the dealer
                 console.log("Dealer is dealt a card...");
                 dealer.push(getCard(shuffled));
@@ -361,6 +361,8 @@ function stand(deck) {
                     announce("Dealer busted! You win this hand!");
                 } else if (countHand(dealer) === 21) {
                     announce("You lose...");
+                } else if (countHand(dealer) === countHand(player)) {
+                    announce("Tie");
                 } else {
                     announce("Dealer wins this hand.");
                 }
