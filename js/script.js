@@ -15,7 +15,11 @@ const   hitMeBtn = document.getElementById("hit-me"),
         bet25El = document.getElementById("bet25"),
         bet100El = document.getElementById("bet100"),
         playerBetEl = document.getElementById("player-bet-amt"),
-        playerBankEl = document.getElementById("player-bank-amt");
+        playerBankEl = document.getElementById("player-bank-amt"),
+        dealerValueEl = document.getElementById("dealer-hand-value"),
+        dealerCountEl = document.getElementById("dealer-hand-count"),
+        playerValueEl = document.getElementById("player-hand-value"),
+        playerCountEl = document.getElementById("player-hand-count");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
