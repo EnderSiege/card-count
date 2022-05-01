@@ -497,13 +497,13 @@ function newHand() {
 
 // Announce function
 function announce(message) {
-    checkGameOver();
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
     hideHitStand();
     updatePlayAreaStand();
     updateChips();
+    checkGameOver();
 }
 
 // Prevent Hit or Stand from being used
