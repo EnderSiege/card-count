@@ -446,7 +446,7 @@ function stand(deck) {
                     pushBet();
                     announce("Push");
                 } else {
-                    wonBet();
+                    lostBet();
                     announce("Dealer wins this hand.");
                 }
 
@@ -497,13 +497,13 @@ function newHand() {
 
 // Announce function
 function announce(message) {
+    checkGameOver();
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
     hideHitStand();
     updatePlayAreaStand();
     updateChips();
-    checkGameOver();
 }
 
 // Prevent Hit or Stand from being used
@@ -588,11 +588,17 @@ function updateChips() {
         bet25El.style = "display: block;";
         bet100El.style = "display: block;";
     } if (playerBank >= 25) {
+        bet1El.style = "display: block;";
+        bet5El.style = "display: block;";
+        bet25El.style = "display: block;";
         bet100El.style = "display: none;";
     } else if (playerBank >= 5) {
+        bet1El.style = "display: block;";
+        bet5El.style = "display: block;";
         bet100El.style = "display: none;";
         bet25El.style = "display: none;";
     } else if (playerBank >= 1) {
+        bet1El.style = "display: block;";
         bet100El.style = "display: none;";
         bet25El.style = "display: none;";
         bet5El.style = "display: none;";
