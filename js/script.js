@@ -502,6 +502,7 @@ function announce(message) {
     announceEl.style = "display: block";
     hideHitStand();
     updatePlayAreaStand();
+    updateChips();
 }
 
 // Prevent Hit or Stand from being used
