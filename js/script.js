@@ -207,6 +207,28 @@ function updatePlayArea() {
                 <p>${player[i]}</p>
             </div>`
     }
+    for (let i = 0; i < dealer.length; i++) { 
+            if (i === 0) {
+                dealerCardsArea.innerHTML += `<div class="playing-card">
+                    <p>?</p>
+                </div>`
+            } else {
+                dealerCardsArea.innerHTML += `<div class="playing-card">
+                <p>${dealer[i]}</p>
+                </div>`
+            }
+    }
+}
+
+function updatePlayAreaStand() {
+    dealerCardsArea.innerHTML = "",
+    playerCardsArea.innerHTML = "";
+    for (let i = 0; i < player.length; i++) {
+        playerCardsArea.innerHTML += 
+            `<div class="playing-card">
+                <p>${player[i]}</p>
+            </div>`
+    }
     for (let i = 0; i < dealer.length; i++) {
         dealerCardsArea.innerHTML += 
             `<div class="playing-card">
@@ -362,6 +384,7 @@ standBtn.addEventListener("click", function() {
 // Function for the "Stand" button
 function stand(deck) {
     console.log("You choose to stand");
+    updatePlayAreaStand();
 // Ensure player does not have 21 or more cards, then carry on
     if (valueHand(player) > 21) {
         announce("You busted!");
@@ -371,7 +394,7 @@ function stand(deck) {
         } else if (valueHand(player) === valueHand(dealer)) {
             announce("Tie");
         } else {
-            announce("Congratulations! You win this hand!");
+            announce("You win this hand!");
         }
     } else {
         var dealInterval = setInterval(function() {
@@ -382,11 +405,11 @@ function stand(deck) {
                 announceDealerHand();
                 announcePlayerHand();
                 // Send array values to UI
-                updatePlayArea();
+                updatePlayAreaStand();
             } else {
                 lessThan = false;
                 if (valueHand(dealer) > 21) {
-                    announce("Dealer busted! You win this hand!");
+                    announce("Dealer busted!");
                 } else if (valueHand(dealer) === 21) {
                     announce("You lose...");
                 } else if (valueHand(dealer) === valueHand(player)) {
@@ -446,6 +469,7 @@ function announce(message) {
     announceEl.textContent = message;
     announceEl.style = "display: block";
     hideHitStand();
+    updatePlayAreaStand();
 }
 
 // Prevent Hit or Stand from being used
