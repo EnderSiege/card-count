@@ -371,9 +371,32 @@ function hitMe(deck) {
     // Announce if player has 21 or bust
     if (valueHand(player) > 21) {
         announce("You busted!");
+        lostBet();
     } else if (valueHand(player === 21)) {
         announce("You have 21!");
+        wonBet();
     }
+}
+
+// If the player lost the bet
+function lostBet() {
+    playerBet = 0;
+    playerBetUpdate();
+}
+
+// If the player won the bet
+function wonBet() {
+    playerBank += (2 * playerBet);
+    playerBet = 0;
+    playerBetUpdate();
+    playerBankUpdate();
+}
+
+function tiedMatch() {
+    playerBank += playerBet;
+    playerBet = 0;
+    playerBetUpdate();
+    playerBankUpdate();
 }
 
 // "Stand" button event listener
@@ -388,13 +411,17 @@ function stand(deck) {
 // Ensure player does not have 21 or more cards, then carry on
     if (valueHand(player) > 21) {
         announce("You busted!");
+        lostBet();
     } else if (valueHand(player) === 21) {
         if (valueHand(dealer) === 21) {
             announce("Both you and the dealer have 21!");
+            tiedMatch();
         } else if (valueHand(player) === valueHand(dealer)) {
             announce("Tie");
+            tiedMatch();
         } else {
             announce("You win this hand!");
+            wonBet();
         }
     } else {
         var dealInterval = setInterval(function() {
@@ -410,12 +437,16 @@ function stand(deck) {
                 lessThan = false;
                 if (valueHand(dealer) > 21) {
                     announce("Dealer busted!");
+                    wonBet();
                 } else if (valueHand(dealer) === 21) {
                     announce("You lose...");
+                    lostBet();
                 } else if (valueHand(dealer) === valueHand(player)) {
                     announce("Tie");
+                    tiedMatch();
                 } else {
                     announce("Dealer wins this hand.");
+                    wonBet();
                 }
 
                 clearInterval(dealInterval);
