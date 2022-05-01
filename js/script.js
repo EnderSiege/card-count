@@ -393,7 +393,7 @@ function wonBet() {
     playerBankUpdate();
 }
 
-function tiedMatch() {
+function pushBet() {
     playerBank += playerBet;
     playerBet = 0;
     playerBetUpdate();
@@ -415,11 +415,11 @@ function stand(deck) {
         announce("You busted!");
     } else if (valueHand(player) === 21) {
         if (valueHand(dealer) === 21) {
-            tiedMatch();
+            pushBet();
             announce("Both you and the dealer have 21!");
         } else if (valueHand(player) === valueHand(dealer)) {
-            tiedMatch();
-            announce("Tie");
+            pushBet();
+            announce("Push");
         } else {
             wonBet();
             announce("You win this hand!");
@@ -443,8 +443,8 @@ function stand(deck) {
                     lostBet();
                     announce("You lose...");
                 } else if (valueHand(dealer) === valueHand(player)) {
-                    tiedMatch();
-                    announce("Tie");
+                    pushBet();
+                    announce("Push");
                 } else {
                     wonBet();
                     announce("Dealer wins this hand.");
