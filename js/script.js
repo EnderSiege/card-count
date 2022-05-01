@@ -586,3 +586,8 @@ infoSection.addEventListener("click", function() {
         playerValueCountEl.style = "display: block;";
     }
 })
+
+// Hide announcement when clicked
+announceEl.addEventListener("click", function() {
+    announceEl.style = "display: none;";
+})
