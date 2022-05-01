@@ -380,6 +380,7 @@ function hitMe(deck) {
 
 // If the player lost the bet
 function lostBet() {
+    playerBank -= playerBet;
     playerBet = 0;
     playerBetUpdate();
 }
