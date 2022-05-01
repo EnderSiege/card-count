@@ -503,6 +503,7 @@ function announce(message) {
     hideHitStand();
     updatePlayAreaStand();
     updateChips();
+    checkGameOver();
 }
 
 // Prevent Hit or Stand from being used
@@ -624,3 +625,20 @@ infoSection.addEventListener("click", function() {
 announceEl.addEventListener("click", function() {
     announceEl.style = "display: none;";
 })
+
+// Check Game Over
+function checkGameOver() {
+    if (playerBank === 0) {
+        showGameOver();
+    }
+}
+
+function showGameOver() {
+    message = "Game Over";
+    console.log(message);
+    announceEl.textContent = message;
+    announceEl.style = "display: block";
+    hitMeBtn.style = "display: none;";
+    standBtn.style = "display: none;";
+    newBtn.textContent = "New Game";
+}
