@@ -38,10 +38,14 @@ li {
     position: fixed;
     left: 0;
     right: 0;
+    color: white;
+}
+
+.button-row,
+.info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: white;
 }
 
 .info-section {
@@ -49,6 +53,12 @@ li {
     padding: 0.6rem;
     background-color: black;
     min-height: 20px;
+}
+
+.info,
+.dealer-count,
+.player-count {
+    display: none;
 }
 
 .button-row {
@@ -207,4 +217,8 @@ li {
 
 .player-bank {
     font-size: 1.5rem;
+}
+
+.not-info {
+    text-align: center;
 }
