@@ -30,6 +30,7 @@ const   hitMeBtn = document.getElementById("hit-me"),
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
+    shuffled,
     player = [],
     dealer = [],
     runningCount = 0,
@@ -198,6 +199,13 @@ function dealCards(deck) {
 
     // Check if someone has Blackjack
     checkBlackjack();
+
+    announceEl.style = "display: none";
+    newBtn.style = "display: block;";
+    hitMeBtn.style = "display: block;";
+    standBtn.style = "display: block;";
+    dealBtn.style = "display: none;";
+    resetBetBtn.style = "display: none;";
 }
 
 function updatePlayArea() {
@@ -323,11 +331,31 @@ function check21() {
 }
 
 function newGame() {
+    
+deck = [],
+player = [],
+dealer = [],
+runningCount = 0,
+decksInPlay = 1,
+message,
+playerBet = 0,
+playerBank = 100,
+dealerValue,
+dealerCount = 0,
+playerValue,
+playerCount = 0;
+
+playerBetUpdate();
+playerBankUpdate();
+
+// Clear play areas
+clearHands();
+
 // Verify deck is empty
 console.log(deck);
 
 // shuffled is the variable holding the shuffled deck while game is in play
-let shuffled = shuffleDeck(deck,decksInPlay);
+shuffled = shuffleDeck(deck,decksInPlay);
 
 // testing shuffle
 console.log("Cards are shuffled:");
@@ -342,10 +370,17 @@ dealBtn.style = "display: block;";
 
 newGame();
 
-
+dealBtn.addEventListener("click", function() {
+    
+    if (playerBet === 0) {
+        alert("You must place a bet");
+    } else {
+        dealCards(shuffled);
+    }
+});
 
 // // testing dealCards
-// console.log("Dealing cards for start of game...");
+// console.log("Dealing cards");
 // dealCards(shuffled);
 // announceDealerHand();
 // announcePlayerHand();
@@ -507,7 +542,11 @@ function newHand() {
     updatePlayArea();
 }
 
-
+function alert(message) {
+    console.log(message);
+    announceEl.textContent = message;
+    announceEl.style = "display: block";
+}
 
 // Announce function
 function announce(message) {
