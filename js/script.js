@@ -3,6 +3,7 @@ const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         newBtn = document.getElementById("new-round"),
         dealBtn = document.getElementById("deal"),
+        resetBetBtn = document.getElementById("reset-bet"),
         runningCountEl = document.getElementById("running-count"),
         remainingCardsEl = document.getElementById("cards-rem"),
         remainingDecksEl = document.getElementById("decks-rem"),
@@ -321,8 +322,8 @@ function check21() {
     }
 }
 
-// Function calls below
-
+function newGame() {
+// Verify deck is empty
 console.log(deck);
 
 // shuffled is the variable holding the shuffled deck while game is in play
@@ -332,11 +333,22 @@ let shuffled = shuffleDeck(deck,decksInPlay);
 console.log("Cards are shuffled:");
 console.log(shuffled);
 
-// testing dealCards
-console.log("Dealing cards for start of game...");
-dealCards(shuffled);
-announceDealerHand();
-announcePlayerHand();
+newBtn.style = "display: none;";
+hitMeBtn.style = "display: none;";
+standBtn.style = "display: none;";
+dealBtn.style = "display: block;";
+
+}
+
+newGame();
+
+
+
+// // testing dealCards
+// console.log("Dealing cards for start of game...");
+// dealCards(shuffled);
+// announceDealerHand();
+// announcePlayerHand();
 
 // "Hit Me" button event listener
 hitMeBtn.addEventListener("click", function() {
@@ -575,6 +587,14 @@ bet25El.addEventListener("click", function() {
 bet100El.addEventListener("click", function() {
     bet100();
     updateChips();
+});
+
+resetBetBtn.addEventListener("click", function() {
+    playerBank += playerBet;
+    playerBet = 0;
+    updateChips();
+    playerBetUpdate();
+    playerBankUpdate();
 });
 
 // Player bet UI update
