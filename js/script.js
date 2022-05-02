@@ -2,6 +2,7 @@
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         newBtn = document.getElementById("new-round"),
+        dealBtn = document.getElementById("deal"),
         runningCountEl = document.getElementById("running-count"),
         remainingCardsEl = document.getElementById("cards-rem"),
         remainingDecksEl = document.getElementById("decks-rem"),
@@ -493,6 +494,8 @@ function newHand() {
     // Send array values to UI
     updatePlayArea();
 }
+
+
 
 // Announce function
 function announce(message) {

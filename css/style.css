@@ -70,6 +70,10 @@ li {
     padding: 1rem 0;
 }
 
+.deal {
+    display: none;
+}
+
 .play-area {
     /* background-color: white; */
     height: 50vh;
