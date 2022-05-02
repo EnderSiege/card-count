@@ -380,7 +380,6 @@ function hitMe(deck) {
 
 // If the player lost the bet
 function lostBet() {
-    playerBank -= playerBet;
     playerBet = 0;
     playerBetUpdate();
 }
@@ -497,13 +496,18 @@ function newHand() {
 
 // Announce function
 function announce(message) {
-    console.log(message);
-    announceEl.textContent = message;
-    announceEl.style = "display: block";
-    hideHitStand();
+
     updatePlayAreaStand();
-    updateChips();
-    checkGameOver();
+
+    if (playerBank <= 0) {
+        showGameOver(message);
+    } else {
+        console.log(message);
+        announceEl.textContent = message;
+        announceEl.style = "display: block";
+        updateChips();
+        hideHitStand();
+    }
 }
 
 // Prevent Hit or Stand from being used
@@ -587,7 +591,7 @@ function updateChips() {
         bet5El.style = "display: block;";
         bet25El.style = "display: block;";
         bet100El.style = "display: block;";
-    } if (playerBank >= 25) {
+    } else if (playerBank >= 25) {
         bet1El.style = "display: block;";
         bet5El.style = "display: block;";
         bet25El.style = "display: block;";
@@ -632,15 +636,8 @@ announceEl.addEventListener("click", function() {
     announceEl.style = "display: none;";
 })
 
-// Check Game Over
-function checkGameOver() {
-    if (playerBank === 0) {
-        showGameOver();
-    }
-}
-
-function showGameOver() {
-    message = "Game Over";
+function showGameOver(message) {
+    message += " Game Over";
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
