@@ -377,7 +377,9 @@ dealBtn.addEventListener("click", function() {
     if (playerBet === 0) {
         alert("You must place a bet");
     } else {
+        clearHands();
         dealCards(shuffled);
+        
     }
 });
 
@@ -570,14 +572,15 @@ function announce(message) {
 function hideHitStand() {
     hitMeBtn.style = "display: none;";
     standBtn.style = "display: none;";
-    newBtn.textContent = "Deal";
+    dealBtn.style = "display: block;";
+    newBtn.style = "display: none;";
 }
 
 // Restore the Hit and Stand buttons
 function restoreHitStand() {
     hitMeBtn.style = "display: block;";
     standBtn.style = "display: block;";
-    newBtn.textContent = "New";
+    newBtn.style = "display: block;";
 }
 
 // Chips functions
