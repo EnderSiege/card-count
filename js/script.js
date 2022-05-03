@@ -697,6 +697,8 @@ infoSection.addEventListener("click", function() {
         playerValueCountEl.style = "display: none;";
     } else {
         infoSectionActive = !infoSectionActive;
+        remainingCards();
+        remainingDecks();
         infoEl.style = "display: flex;";
         notInfoEl.style = "display: none;";
         dealerValueCountEl.style = "display: block;";
