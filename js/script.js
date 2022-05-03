@@ -314,10 +314,13 @@ function announceDealerHand() {
 
 function checkBlackjack() {
     if (valueHand(player) === 21 && valueHand(dealer) === 21) {
+        updatePlayAreaStand();
         announce("Both you and the dealer have Blackjack");
     } else if (valueHand(dealer) === 21) {
+        updatePlayAreaStand();
         announce("Dealer has Blackjack");
     } else if (valueHand(player) === 21) {
+        updatePlayAreaStand();
         announce("You have Blackjack!");
     }
 }
@@ -371,9 +374,7 @@ dealBtn.style = "display: block;";
 newGame();
 
 dealBtn.addEventListener("click", function() {
-    
     if (playerBet === 0) {
-        announceEl.style = "display: none;";
         alert("You must place a bet");
     } else {
         dealCards(shuffled);
@@ -435,7 +436,7 @@ function lostBet() {
 
 // If the player won the bet
 function wonBet() {
-    playerBank += (2 * playerBet);
+    playerBank += 2 * playerBet;
     playerBet = 0;
     playerBetUpdate();
     playerBankUpdate();
