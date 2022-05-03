@@ -31,6 +31,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
 // Deck, player, and dealer arrays starts empty
 let deck = [],
     shuffled,
+    remainCards,
+    remainDecks,
     player = [],
     dealer = [],
     runningCount = 0,
@@ -146,12 +148,14 @@ function resetCards(array,decks) {
 
 // Show the number of remaining cards in the deck
 function remainingCards(deck) {
-    remainingCardsEl.textContent = deck.length;
+    remainCards = deck.length;
+    remainingCardsEl.textContent = remainCards;
 }
 
 // Show the number of remaining decks in play
 function remainingDecks(deck) {
-    remainingDecksEl.textContent = (Math.floor((deck.length) / 52) + 1);
+    remainDecks = (Math.floor((deck.length) / 52) + 1)
+    remainingDecksEl.textContent = remainDecks;
 }
 
 // Fisher-Yates Shuffle
@@ -338,6 +342,8 @@ function newGame() {
 deck = [],
 player = [],
 dealer = [],
+remainCards = 0,
+remainDecks = 0,
 runningCount = 0,
 decksInPlay = 1,
 message,
