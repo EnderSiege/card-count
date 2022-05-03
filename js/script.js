@@ -49,6 +49,8 @@ let deck = [],
 playerBetUpdate();
 playerBankUpdate();
 
+infoSection.style = "display: none";
+
 // Clear play areas
 clearHands();
 
@@ -365,6 +367,7 @@ console.log(deck);
 
 // shuffled is the variable holding the shuffled deck while game is in play
 shuffled = shuffleDeck(deck,decksInPlay);
+infoSection.style = "display: block";
 
 // testing shuffle
 console.log("Cards are shuffled:");
@@ -697,8 +700,8 @@ infoSection.addEventListener("click", function() {
         playerValueCountEl.style = "display: none;";
     } else {
         infoSectionActive = !infoSectionActive;
-        remainingCards();
-        remainingDecks();
+        remainingCards(shuffled);
+        remainingDecks(shuffled);
         infoEl.style = "display: flex;";
         notInfoEl.style = "display: none;";
         dealerValueCountEl.style = "display: block;";
@@ -719,4 +722,8 @@ function showGameOver(message) {
     hitMeBtn.style = "display: none;";
     standBtn.style = "display: none;";
     newBtn.textContent = "New Game";
+}
+
+function checkShuffle() {
+
 }
