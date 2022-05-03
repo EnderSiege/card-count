@@ -513,7 +513,7 @@ function checkDeck(deck) {
 
 // "New" button event listener
 newBtn.addEventListener("click", function() {
-    newHand();
+    newGame();
 })
 
 // Function for the "New" button
