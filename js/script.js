@@ -324,9 +324,11 @@ function checkBlackjack() {
         announce("Both you and the dealer have Blackjack");
     } else if (valueHand(dealer) === 21) {
         updatePlayAreaStand();
+        lostBet();
         announce("Dealer has Blackjack");
     } else if (valueHand(player) === 21) {
         updatePlayAreaStand();
+        wonBet();
         announce("You have Blackjack!");
     }
 }
