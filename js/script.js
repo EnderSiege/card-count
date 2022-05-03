@@ -388,7 +388,9 @@ dealBtn.addEventListener("click", function() {
     } else {
         clearHands();
         dealCards(shuffled);
-        
+        countEachHand();
+        announcePlayerHand();
+        announceDealerHand();
     }
 });
 
@@ -702,6 +704,9 @@ infoSection.addEventListener("click", function() {
         infoSectionActive = !infoSectionActive;
         remainingCards(shuffled);
         remainingDecks(shuffled);
+        countEachHand();
+        announcePlayerHand();
+        announceDealerHand();
         infoEl.style = "display: flex;";
         notInfoEl.style = "display: none;";
         dealerValueCountEl.style = "display: block;";
