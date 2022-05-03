@@ -373,6 +373,7 @@ newGame();
 dealBtn.addEventListener("click", function() {
     
     if (playerBet === 0) {
+        announceEl.style = "display: none;";
         alert("You must place a bet");
     } else {
         dealCards(shuffled);
@@ -649,22 +650,22 @@ function playerBankUpdate() {
 // Update chips based on bank
 function updateChips() {
     if (playerBank >= 100) {
-        bet1El.style = "display: block;";
-        bet5El.style = "display: block;";
-        bet25El.style = "display: block;";
-        bet100El.style = "display: block;";
+        bet1El.style = "display: flex;";
+        bet5El.style = "display: flex;";
+        bet25El.style = "display: flex;";
+        bet100El.style = "display: flex;";
     } else if (playerBank >= 25) {
-        bet1El.style = "display: block;";
-        bet5El.style = "display: block;";
-        bet25El.style = "display: block;";
+        bet1El.style = "display: flex;";
+        bet5El.style = "display: flex;";
+        bet25El.style = "display: flex;";
         bet100El.style = "display: none;";
     } else if (playerBank >= 5) {
-        bet1El.style = "display: block;";
-        bet5El.style = "display: block;";
+        bet1El.style = "display: flex;";
+        bet5El.style = "display: flex;";
         bet100El.style = "display: none;";
         bet25El.style = "display: none;";
     } else if (playerBank >= 1) {
-        bet1El.style = "display: block;";
+        bet1El.style = "display: flex;";
         bet100El.style = "display: none;";
         bet25El.style = "display: none;";
         bet5El.style = "display: none;";
