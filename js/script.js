@@ -38,7 +38,7 @@ let deck = [],
     player = [],
     dealer = [],
     runningCount = 0,
-    decksInPlay = 1,
+    decksInPlay = 8,
     message,
     playerBet = 0,
     playerBank = 100,
@@ -347,6 +347,7 @@ function check21() {
     if (valueHand(dealer) === 21) {
         announce("Dealer has 21");
     } else if (valueHand(player) === 21) {
+        wonBet();
         announce("You have 21!");
     }
 }
@@ -359,7 +360,7 @@ dealer = [],
 remainCards = 0,
 remainDecks = 0,
 runningCount = 0,
-decksInPlay = 1,
+decksInPlay = 8,
 message,
 playerBet = 0,
 playerBank = 100,
