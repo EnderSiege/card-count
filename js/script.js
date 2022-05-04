@@ -5,6 +5,7 @@ const   hitMeBtn = document.getElementById("hit-me"),
         dealBtn = document.getElementById("deal"),
         resetBetBtn = document.getElementById("reset-bet"),
         runningCountEl = document.getElementById("running-count"),
+        runningCountPEl = document.getElementById("running-count-p"),
         remainingCardsEl = document.getElementById("cards-rem"),
         remainingDecksEl = document.getElementById("decks-rem"),
         dealerArea = document.getElementById("dealer-area"),
@@ -44,7 +45,8 @@ let deck = [],
     dealerCount = 0,
     playerValue,
     playerCount = 0
-    infoSectionActive = false;
+    infoSectionActive = false,
+    playerStands = false;
 
 playerBetUpdate();
 playerBankUpdate();
@@ -237,6 +239,13 @@ function updatePlayArea() {
 }
 
 function updatePlayAreaStand() {
+    playerStands = true;
+    
+    if (infoSectionActive) {
+        dealerValueCountEl.style = "display: block";
+        runningCountPEl.style = "display: inline";
+    }
+
     dealerCardsArea.innerHTML = "",
     playerCardsArea.innerHTML = "";
     for (let i = 0; i < player.length; i++) {
@@ -356,7 +365,8 @@ playerBank = 100,
 dealerValue,
 dealerCount = 0,
 playerValue,
-playerCount = 0;
+playerCount = 0,
+playerStands = false;
 
 playerBetUpdate();
 playerBankUpdate();
@@ -700,8 +710,8 @@ infoSection.addEventListener("click", function() {
         infoSectionActive = !infoSectionActive;
         infoEl.style = "display: none;";
         notInfoEl.style = "display: block;";
-        dealerValueCountEl.style = "display: none;";
-        playerValueCountEl.style = "display: none;";
+        dealerValueCountEl.style = "display: none";
+        playerValueCountEl.style = "display: none";
     } else {
         infoSectionActive = !infoSectionActive;
         remainingCards(shuffled);
@@ -711,14 +721,20 @@ infoSection.addEventListener("click", function() {
         announceDealerHand();
         infoEl.style = "display: flex;";
         notInfoEl.style = "display: none;";
-        dealerValueCountEl.style = "display: block;";
-        playerValueCountEl.style = "display: block;";
+        playerValueCountEl.style = "display: block";
+        if (playerStands) {
+            dealerValueCountEl.style = "display: block";
+            runningCountPEl.style = "display: inline";
+        } else {
+            dealerValueCountEl.style = "display: none";
+            runningCountPEl.style = "display: none";
+        }
     }
 })
 
 // Hide announcement when clicked
 announceEl.addEventListener("click", function() {
-    announceEl.style = "display: none;";
+    announceEl.style = "display: none";
 })
 
 function showGameOver(message) {
@@ -726,8 +742,8 @@ function showGameOver(message) {
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
-    hitMeBtn.style = "display: none;";
-    standBtn.style = "display: none;";
+    hitMeBtn.style = "display: none";
+    standBtn.style = "display: none";
     newBtn.textContent = "New Game";
 }
 
