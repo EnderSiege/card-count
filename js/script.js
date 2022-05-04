@@ -156,7 +156,7 @@ function remainingCards(deck) {
 
 // Show the number of remaining decks in play
 function remainingDecks(deck) {
-    remainDecks = (Math.floor((deck.length) / 52) + 1)
+    remainDecks = (Math.floor((deck.length) / 52))
     remainingDecksEl.textContent = remainDecks;
 }
 
