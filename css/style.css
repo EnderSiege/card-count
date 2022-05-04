@@ -113,6 +113,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 2px 2px 10px black;
 }

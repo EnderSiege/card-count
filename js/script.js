@@ -398,6 +398,11 @@ dealBtn.addEventListener("click", function() {
     if (playerBet === 0) {
         alert("You must place a bet");
     } else {
+        playerStands = false;
+        if (infoSectionActive) {
+            dealerValueCountEl.style = "display: none";
+            runningCountPEl.style = "display: none";
+        }
         clearHands();
         dealCards(shuffled);
         countEachHand();
