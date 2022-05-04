@@ -13,6 +13,7 @@ const   hitMeBtn = document.getElementById("hit-me"),
         playerArea = document.getElementById("player-area"),
         playerCardsArea = document.getElementById("player-cards-area"),
         announceEl = document.getElementById("announce"),
+        chipsRowEl = document.getElementById("chips-row"),
         bet1El = document.getElementById("bet1"),
         bet5El = document.getElementById("bet5"),
         bet25El = document.getElementById("bet25"),
@@ -399,11 +400,13 @@ dealBtn.addEventListener("click", function() {
         alert("You must place a bet");
     } else {
         playerStands = false;
+
         if (infoSectionActive) {
             dealerValueCountEl.style = "display: none";
             runningCountPEl.style = "display: none";
         }
         clearHands();
+        shuffled = checkDeck(shuffled);
         dealCards(shuffled);
         countEachHand();
         announcePlayerHand();
@@ -539,6 +542,7 @@ function checkDeck(deck) {
     if (deck.length <= 10) {
         deck = resetCards(deck, decksInPlay);
         deck = shuffleDeck(deck, decksInPlay);
+        alert("Deck is shuffled");
     }
     return deck;
 }
