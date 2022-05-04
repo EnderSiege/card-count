@@ -5,4 +5,4 @@ My goal of this project is to put my current JavaScript skills to the test, as w
 
 I understand the way that I am working on this project is most certainly not the best way. I'm simply using concepts as I learn them. I plan to return to this project as I continue learning.
 
-Using the following resources as a guide: (1) https://youtu.be/SHK2C-QQR-k - How to Count Cards (and Bring Down the House) by Blackjack Apprenticeship. (2) onlinegambling.com/blackjack/rules/ - Online Gambling Blackjack Rules page.
+Using the following resources as a guide: (1) https://youtu.be/SHK2C-QQR-k - How to Count Cards (and Bring Down the House) by Blackjack Apprenticeship. (2) https://www.onlinegambling.com/blackjack/rules/ - Online Gambling Blackjack Rules page.
