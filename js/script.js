@@ -198,6 +198,13 @@ function getCard(deck) {
 
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
+    announceEl.style = "display: none";
+    newBtn.style = "display: block;";
+    hitMeBtn.style = "display: block;";
+    standBtn.style = "display: block;";
+    dealBtn.style = "display: none;";
+    resetBetBtn.style = "display: none;";
+
     player.push(getCard(deck));
     dealer.push(getCard(deck));
     player.push(getCard(deck));
@@ -208,13 +215,6 @@ function dealCards(deck) {
 
     // Check if someone has Blackjack
     checkBlackjack();
-
-    announceEl.style = "display: none";
-    newBtn.style = "display: block;";
-    hitMeBtn.style = "display: block;";
-    standBtn.style = "display: block;";
-    dealBtn.style = "display: none;";
-    resetBetBtn.style = "display: none;";
 }
 
 function updatePlayArea() {
@@ -405,6 +405,7 @@ dealBtn.addEventListener("click", function() {
             dealerValueCountEl.style = "display: none";
             runningCountPEl.style = "display: none";
         }
+        chipsRowEl.style = "display: none";
         clearHands();
         shuffled = checkDeck(shuffled);
         dealCards(shuffled);
@@ -597,6 +598,7 @@ function announce(message) {
         console.log(message);
         announceEl.textContent = message;
         announceEl.style = "display: block";
+        chipsRowEl.style = "display: flex";
         updateChips();
         hideHitStand();
     }
