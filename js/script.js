@@ -549,6 +549,8 @@ newBtn.addEventListener("click", function() {
 })
 
 // Function for the "New" button
+// This is the old function
+// Leaving this here for now
 function newHand() {
     // Reset each hand count
     dealerCount = 0,
