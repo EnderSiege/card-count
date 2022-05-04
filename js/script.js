@@ -373,6 +373,8 @@ playerStands = false;
 playerBetUpdate();
 playerBankUpdate();
 
+updateChips();
+
 // Clear play areas
 clearHands();
 
