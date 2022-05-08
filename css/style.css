@@ -96,14 +96,6 @@ li {
     flex-grow: 1;
 }
 
-.dealer-area {
-    /* background-color: red; */
-}
-
-.player-area {
-    /* background-color: blue; */
-}
-
 .playing-card {
     background-color: white;
     font-size: 1.8rem;
