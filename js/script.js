@@ -376,6 +376,9 @@ playerBankUpdate();
 
 updateChips();
 
+playerValueEl.innerText = playerValue;
+playerCountEl.innerText = playerCount;
+
 // Clear play areas
 clearHands();
 
