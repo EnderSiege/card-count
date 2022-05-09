@@ -34,7 +34,8 @@ li {
 }
 
 .info-section,
-.button-row {
+.button-row,
+.chips-and-bank {
     position: fixed;
     left: 0;
     right: 0;
@@ -156,6 +157,7 @@ li {
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+    bottom: 4.5rem;
 }
 
 .chips {
@@ -204,13 +206,22 @@ li {
     text-shadow: 2px 2px 3px black;
 }
 
-.player-bet {
+.monies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.4rem;
+    background-color: black;
+    font-size: 1.2rem;
+}
+
+/* .player-bet {
     font-size: 1.4rem;
 }
 
 .player-bank {
-    font-size: 1.5rem;
-}
+    font-size: 1.2rem;
+} */
 
 .not-info {
     text-align: center;
