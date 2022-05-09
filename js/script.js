@@ -331,6 +331,7 @@ function announceDealerHand() {
 function checkBlackjack() {
     if (valueHand(player) === 21 && valueHand(dealer) === 21) {
         updatePlayAreaStand();
+        pushBet();
         announce("Both you and the dealer have Blackjack");
     } else if (valueHand(dealer) === 21) {
         updatePlayAreaStand();
