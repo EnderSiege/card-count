@@ -346,6 +346,7 @@ function checkBlackjack() {
 
 function check21() {
     if (valueHand(dealer) === 21) {
+        lostBet();
         announce("Dealer has 21");
     } else if (valueHand(player) === 21) {
         wonBet();
