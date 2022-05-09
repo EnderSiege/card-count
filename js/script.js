@@ -363,12 +363,11 @@ remainCards = 0,
 remainDecks = 0,
 runningCount = 0,
 decksInPlay = 1,
-message,
 playerBet = 0,
 playerBank = 100,
-dealerValue,
+dealerValue = 0,
 dealerCount = 0,
-playerValue,
+playerValue = 0,
 playerCount = 0,
 playerStands = false;
 
@@ -391,11 +390,11 @@ infoSection.style = "display: block";
 console.log("Cards are shuffled:");
 console.log(shuffled);
 
-newBtn.style = "display: none;";
-hitMeBtn.style = "display: none;";
-standBtn.style = "display: none;";
-dealBtn.style = "display: block;";
-
+newBtn.style = "display: none";
+hitMeBtn.style = "display: none";
+standBtn.style = "display: none";
+dealBtn.style = "display: block";
+resetBetBtn.style = "display: block";
 }
 
 newGame();
@@ -611,10 +610,11 @@ function announce(message) {
 
 // Prevent Hit or Stand from being used
 function hideHitStand() {
-    hitMeBtn.style = "display: none;";
-    standBtn.style = "display: none;";
-    dealBtn.style = "display: block;";
-    newBtn.style = "display: none;";
+    hitMeBtn.style = "display: none";
+    standBtn.style = "display: none";
+    dealBtn.style = "display: block";
+    newBtn.style = "display: none";
+    resetBetBtn.style = "display: block";
 }
 
 // Restore the Hit and Stand buttons
@@ -694,6 +694,7 @@ function playerBankUpdate() {
 
 // Update chips based on bank
 function updateChips() {
+    chipsRowEl.style = "display: flex";
     if (playerBank >= 100) {
         bet1El.style = "display: flex;";
         bet5El.style = "display: flex;";
