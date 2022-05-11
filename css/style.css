@@ -162,18 +162,18 @@ li {
 }
 
 .chips {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
     border: 2px solid black;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .chips p {
     background: rgba(0, 0, 0, 0.5);
-    height: 60px;
-    width: 60px;
-    border-radius: 30px;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 1.75rem;
     color: white;
     text-align: center;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -228,9 +228,52 @@ li {
     text-align: center;
 }
 
-@media screen and (orientation: landscape) {
+/* Landscape view for phones */
+
+@media screen and
+(orientation: landscape) {
     .counts {
         flex-direction: row;
         gap: 1rem;
+    }
+}
+
+/* For iPad Mini resolution */
+
+@media screen and
+(orientation: landscape) and
+(min-width: 1024px) and
+(min-height: 768px) {
+    html {
+        font-size: 26px;
+    }
+}
+
+@media screen and
+(orientation: portrait) and
+(min-width: 768px) and
+(min-height: 1024px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+/* For iPad Air resolution */
+
+@media screen and
+(orientation: landscape) and
+(min-width: 1180px) and
+(min-height: 820px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+@media screen and
+(orientation: portrait) and
+(min-width: 820px) and
+(min-height: 1180px) {
+    html {
+        font-size: 30px;
     }
 }
