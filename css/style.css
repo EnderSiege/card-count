@@ -130,6 +130,7 @@ li {
 }
 
 .counts {
+    flex-direction: column;
     margin-right: 1rem;
     color: white;
     text-align: center;
@@ -225,4 +226,11 @@ li {
 
 .not-info {
     text-align: center;
+}
+
+@media screen and (orientation: landscape) {
+    .counts {
+        flex-direction: row;
+        gap: 1rem;
+    }
 }

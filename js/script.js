@@ -243,7 +243,7 @@ function updatePlayAreaStand() {
     playerStands = true;
     
     if (infoSectionActive) {
-        dealerValueCountEl.style = "display: block";
+        dealerValueCountEl.style = "display: flex";
         runningCountPEl.style = "display: inline";
     }
 
@@ -339,20 +339,20 @@ function checkBlackjack() {
         announce("Dealer has Blackjack");
     } else if (valueHand(player) === 21) {
         updatePlayAreaStand();
-        wonBet();
+        gotBlackjack();
         announce("You have Blackjack!");
     }
 }
 
-function check21() {
-    if (valueHand(dealer) === 21) {
-        lostBet();
-        announce("Dealer has 21");
-    } else if (valueHand(player) === 21) {
-        wonBet();
-        announce("You have 21!");
-    }
-}
+// function check21() {
+//     if (valueHand(dealer) === 21) {
+//         lostBet();
+//         announce("Dealer has 21");
+//     } else if (valueHand(player) === 21) {
+//         wonBet();
+//         announce("You have 21!");
+//     }
+// }
 
 function newGame() {
     
@@ -456,16 +456,13 @@ function hitMe(deck) {
         // Display player cards and count
         announcePlayerHand();
 
-        check21();
+        // check21();
     }
 
-    // Announce if player has 21 or bust
+    // Announce if player busts
     if (valueHand(player) > 21) {
         lostBet();
         announce("You busted!");
-    } else if (valueHand(player === 21)) {
-        wonBet();
-        announce("You have 21!");
     }
 }
 
@@ -473,6 +470,14 @@ function hitMe(deck) {
 function lostBet() {
     playerBet = 0;
     playerBetUpdate();
+}
+
+// If the player gets Blackjack (pays 2:1)
+function gotBlackjack() {
+    playerBank += 3 * playerBet;
+    playerBet = 0;
+    playerBetUpdate();
+    playerBankUpdate();
 }
 
 // If the player won the bet
@@ -743,9 +748,9 @@ infoSection.addEventListener("click", function() {
         announceDealerHand();
         infoEl.style = "display: flex;";
         notInfoEl.style = "display: none;";
-        playerValueCountEl.style = "display: block";
+        playerValueCountEl.style = "display: flex";
         if (playerStands) {
-            dealerValueCountEl.style = "display: block";
+            dealerValueCountEl.style = "display: flex";
             runningCountPEl.style = "display: inline";
         } else {
             dealerValueCountEl.style = "display: none";
