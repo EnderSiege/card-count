@@ -344,15 +344,14 @@ function checkBlackjack() {
     }
 }
 
-// function check21() {
-//     if (valueHand(dealer) === 21) {
-//         lostBet();
-//         announce("Dealer has 21");
-//     } else if (valueHand(player) === 21) {
-//         wonBet();
-//         announce("You have 21!");
-//     }
-// }
+function check21() {
+    if (valueHand(dealer) === 21) {
+        lostBet();
+        announce("Dealer has 21");
+    } else if (valueHand(player) === 21) {
+        stand(shuffled);
+    }
+}
 
 function newGame() {
     
@@ -456,7 +455,7 @@ function hitMe(deck) {
         // Display player cards and count
         announcePlayerHand();
 
-        // check21();
+        check21();
     }
 
     // Announce if player busts
