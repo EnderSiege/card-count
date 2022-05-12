@@ -256,6 +256,11 @@ li {
     html {
         font-size: 20px;
     }
+    
+    .playing-card {
+        height: 7rem;
+        width: 4.5rem;
+    }
 }
 
 @media screen and
@@ -264,6 +269,11 @@ li {
 (min-height: 1024px) {
     html {
         font-size: 22px;
+    }
+
+    .playing-card {
+        height: 7rem;
+        width: 4.5rem;
     }
 }
 
@@ -284,5 +294,29 @@ li {
 (min-height: 1180px) {
     html {
         font-size: 24px;
+    }
+}
+
+/* For iPad Pro resolution */
+
+@media screen and
+(orientation: landscape) and
+(min-width: 1366px) and
+(min-height: 1024px) {
+    .playing-card {
+        font-size: 2.6rem;
+        /* height: 6rem;
+        width: 3.5rem; */
+    }
+}
+
+@media screen and
+(orientation: portrait) and
+(min-width: 1024px) and
+(min-height: 1366px) {
+    .playing-card {
+        font-size: 2.4rem;
+        /* height: 6rem;
+        width: 3.5rem; */
     }
 }
