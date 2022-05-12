@@ -345,10 +345,7 @@ function checkBlackjack() {
 }
 
 function check21() {
-    if (valueHand(dealer) === 21) {
-        lostBet();
-        announce("Dealer has 21");
-    } else if (valueHand(player) === 21) {
+    if (valueHand(player) === 21) {
         stand(shuffled);
     }
 }
@@ -507,14 +504,6 @@ function stand(deck) {
     if (valueHand(player) > 21) {
         lostBet();
         announce("You busted!");
-    } else if (valueHand(player) === 21) {
-        if (valueHand(dealer) === 21) {
-            pushBet();
-            announce("Both you and the dealer have 21!");
-        } else if (valueHand(player) === valueHand(dealer)) {
-            pushBet();
-            announce("Push");
-        }
     } else {
         var dealInterval = setInterval(function() {
             if (valueHand(dealer) < valueHand(player)) {
