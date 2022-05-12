@@ -514,9 +514,6 @@ function stand(deck) {
         } else if (valueHand(player) === valueHand(dealer)) {
             pushBet();
             announce("Push");
-        } else {
-            wonBet();
-            announce("You win this hand!");
         }
     } else {
         var dealInterval = setInterval(function() {
