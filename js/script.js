@@ -506,7 +506,7 @@ function stand(deck) {
         announce("You busted!");
     } else {
         var dealInterval = setInterval(function() {
-            if (valueHand(dealer) < valueHand(player)) {
+            if (valueHand(dealer) < valueHand(player) || valueHand(dealer) < 17) {
                 // Deal a card to the dealer
                 console.log("Dealer is dealt a card...");
                 dealer.push(getCard(shuffled));
@@ -525,9 +525,12 @@ function stand(deck) {
                 } else if (valueHand(dealer) === valueHand(player)) {
                     pushBet();
                     announce("Push");
-                } else {
+                } else if (valueHand(dealer) > valueHand(player)){
                     lostBet();
                     announce("Dealer wins this hand.");
+                } else {
+                    wonBet();
+                    announce("You win this hand.");
                 }
 
                 clearInterval(dealInterval);
