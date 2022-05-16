@@ -48,6 +48,10 @@
                     </p>
                 </div>
             </div>
+            <!-- <div class="rules">
+                <div>Blackjack pays 2 to 1</div>
+                <div>Dealer stands on 17</div>
+            </div> -->
             <div class="player-area play-area-div" id="player-area">
                 <div id="player-cards-area" class="player-cards-area cards-areas">
     
@@ -90,8 +94,12 @@
         </div>
     </div>
     <div class="button-row">
-        <button id="new-round">
-            New
+        <button id="menu" class="menu-button">
+            <div class="menu" onclick="clickMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </button>
         <button id="hit-me">
             Hit

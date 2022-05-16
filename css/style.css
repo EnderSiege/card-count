@@ -29,8 +29,59 @@ button {
     margin-bottom: 0.5rem;
 } */
 
+/* BEGIN menu button */
+
+.menu-button {
+
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 1rem;
+    height: 0.2rem;
+    background-color: #333;
+    margin: 0.2rem auto;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    /* -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px); */
+    -webkit-transform: rotate(-45deg) translate(-0.3rem, 0.23rem);
+    transform: rotate(-45deg) translate(-0.3rem, 0.23rem);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    /* -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px); */
+    -webkit-transform: rotate(45deg) translate(-0.29rem, -0.26rem);
+    transform: rotate(45deg) translate(-0.29rem, -0.26rem);
+}
+
+/* END menu button */
+
 li {
     text-align: right;
+}
+
+.rules {
+    text-align: center;
+    font-family: serif;
+}
+
+.rules div:first-child {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: yellow;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+
+.rules div:last-child {
+    color: lightgreen;
 }
 
 .info-section,

@@ -1,7 +1,7 @@
 // "Hit Me" and "Stand" buttons
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
-        newBtn = document.getElementById("new-round"),
+        menuBtn = document.getElementById("menu-button"),
         dealBtn = document.getElementById("deal"),
         resetBetBtn = document.getElementById("reset-bet"),
         runningCountEl = document.getElementById("running-count"),
@@ -199,7 +199,6 @@ function getCard(deck) {
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
     announceEl.style = "display: none";
-    newBtn.style = "display: block;";
     hitMeBtn.style = "display: block;";
     standBtn.style = "display: block;";
     dealBtn.style = "display: none;";
@@ -389,7 +388,6 @@ infoSection.style = "display: block";
 console.log("Cards are shuffled:");
 console.log(shuffled);
 
-newBtn.style = "display: none";
 hitMeBtn.style = "display: none";
 standBtn.style = "display: none";
 dealBtn.style = "display: block";
@@ -548,10 +546,14 @@ function checkDeck(deck) {
     return deck;
 }
 
-// "New" button event listener
-newBtn.addEventListener("click", function() {
-    newGame();
+// Menu button event listener
+menuBtn.addEventListener("click", function() {
+    clickMenu(x);
 })
+
+function clickMenu(x) {
+    x.classList.toggle("change");
+  }
 
 // Function for the "New" button
 // This is the old function
@@ -609,7 +611,6 @@ function hideHitStand() {
     hitMeBtn.style = "display: none";
     standBtn.style = "display: none";
     dealBtn.style = "display: block";
-    newBtn.style = "display: none";
     resetBetBtn.style = "display: block";
 }
 
@@ -617,7 +618,6 @@ function hideHitStand() {
 function restoreHitStand() {
     hitMeBtn.style = "display: block;";
     standBtn.style = "display: block;";
-    newBtn.style = "display: block;";
 }
 
 // Chips functions
@@ -759,7 +759,6 @@ function showGameOver(message) {
     announceEl.style = "display: block";
     hitMeBtn.style = "display: none";
     standBtn.style = "display: none";
-    newBtn.textContent = "New Game";
 }
 
 function checkShuffle() {
