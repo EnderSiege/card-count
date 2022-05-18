@@ -547,13 +547,13 @@ function checkDeck(deck) {
 }
 
 // Menu button event listener
-menuBtn.addEventListener("click", function() {
-    clickMenu(x);
-})
+// menuBtn.addEventListener("click", function() {
+//     clickMenu(x);
+// })
 
 function clickMenu(x) {
     x.classList.toggle("change");
-  }
+}
 
 // Function for the "New" button
 // This is the old function
