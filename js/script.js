@@ -38,6 +38,7 @@ let deck = [],
     player = [],
     dealer = [],
     runningCount = 0,
+    runningCountHidden = 0,
     decksInPlay = 1,
     message,
     playerBet = 0,
@@ -84,9 +85,19 @@ function updateCount(card) {
     return count;
 }
 
+// Calculate running count
+function calcRunningCount(card) {
+    // Update the game count
+    runningCount += updateCount(card);
+}
+
 // Share the count
 function shareCurrentCount() {
     runningCountEl.textContent = runningCount;
+}
+
+function sharePartialCount() {
+    runningCountEl.textContent = runningCountHidden;
 }
 
 // Shuffle the deck array
@@ -189,8 +200,20 @@ function getCard(deck) {
     const card = deck.pop();
     console.log(card + " drawn");
 
-    // Update the game count
-    runningCount += updateCount(card);
+    // Add to running count
+    calcRunningCount(card);
+
+    // Send card out
+    return card;
+}
+
+// Deal the flipped dealer card
+function getFlippedCard(deck) {
+    const card = deck.pop();
+    console.log(card + " drawn (upside-down)");
+
+    // Hide from running count for now
+    runningCountHidden = updateCount(card);
 
     // Send card out
     return card;
@@ -205,7 +228,7 @@ function dealCards(deck) {
     resetBetBtn.style = "display: none;";
 
     player.push(getCard(deck));
-    dealer.push(getCard(deck));
+    dealer.push(getFlippedCard(deck));
     player.push(getCard(deck));
     dealer.push(getCard(deck));
     
@@ -240,10 +263,13 @@ function updatePlayArea() {
 
 function updatePlayAreaStand() {
     playerStands = true;
+
+    runningCount += runningCountHidden;
+    runningCountEl.textContent = runningCount;
     
     if (infoSectionActive) {
         dealerValueCountEl.style = "display: flex";
-        runningCountPEl.style = "display: inline";
+        // runningCountPEl.style = "display: inline";
     }
 
     dealerCardsArea.innerHTML = "",
@@ -404,7 +430,7 @@ dealBtn.addEventListener("click", function() {
 
         if (infoSectionActive) {
             dealerValueCountEl.style = "display: none";
-            runningCountPEl.style = "display: none";
+            // runningCountPEl.style = "display: none";
         }
         chipsRowEl.style = "display: none";
         clearHands();
@@ -739,10 +765,10 @@ infoSection.addEventListener("click", function() {
         playerValueCountEl.style = "display: flex";
         if (playerStands) {
             dealerValueCountEl.style = "display: flex";
-            runningCountPEl.style = "display: inline";
+            // runningCountPEl.style = "display: inline";
         } else {
             dealerValueCountEl.style = "display: none";
-            runningCountPEl.style = "display: none";
+            // runningCountPEl.style = "display: none";
         }
     }
 })
