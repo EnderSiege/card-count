@@ -170,7 +170,7 @@ li {
     top: 0; left: 0;
     transform: translate(calc(50vw - 50%), calc(42vh - 42%));
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     border: 2px solid white;
     font-size: 2rem;
