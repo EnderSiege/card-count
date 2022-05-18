@@ -4,6 +4,7 @@ const   hitMeBtn = document.getElementById("hit-me"),
         menuBtn = document.getElementById("menu-button"),
         dealBtn = document.getElementById("deal"),
         resetBetBtn = document.getElementById("reset-bet"),
+        newGameBtn = document.getElementById("new-game"),
         runningCountEl = document.getElementById("running-count"),
         runningCountPEl = document.getElementById("running-count-p"),
         remainingCardsEl = document.getElementById("cards-rem"),
@@ -392,10 +393,14 @@ playerValue = 0,
 playerCount = 0,
 playerStands = false;
 
+newGameBtn.style = "display: none";
+dealerValueCountEl.style = "display: none";
+
 playerBetUpdate();
 playerBankUpdate();
 
 updateChips();
+updateCount();
 
 playerValueEl.innerText = playerValue;
 playerCountEl.innerText = playerCount;
@@ -679,21 +684,25 @@ function bet100() {
 bet1El.addEventListener("click", function() {
     bet1();
     updateChips();
+    announceEl.style = "display: none";
 });
 
 bet5El.addEventListener("click", function() {
     bet5();
     updateChips();
+    announceEl.style = "display: none";
 });
 
 bet25El.addEventListener("click", function() {
     bet25();
     updateChips();
+    announceEl.style = "display: none";
 });
 
 bet100El.addEventListener("click", function() {
     bet100();
     updateChips();
+    announceEl.style = "display: none";
 });
 
 resetBetBtn.addEventListener("click", function() {
@@ -785,8 +794,10 @@ function showGameOver(message) {
     announceEl.style = "display: block";
     hitMeBtn.style = "display: none";
     standBtn.style = "display: none";
+    newGameBtn.style = "display: block";
 }
 
-function checkShuffle() {
-
-}
+newGameBtn.addEventListener("click", function() {
+    announceEl.style = "display: none";
+    newGame();
+})
