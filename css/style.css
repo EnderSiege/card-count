@@ -36,6 +36,7 @@ button {
 
 .menu-button {
     /* font-size: 2; */
+    max-width: 5rem;
 }
   
 .bar1, .bar2, .bar3 {
