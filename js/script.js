@@ -1,4 +1,4 @@
-// "Hit Me" and "Stand" buttons
+// Find all the things
 const   hitMeBtn = document.getElementById("hit-me"),
         standBtn = document.getElementById("stand"),
         menuBtn = document.getElementById("menu-button"),
