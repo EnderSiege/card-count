@@ -234,6 +234,7 @@ li {
     font-size: 2rem;
     opacity: 1;
     transition: 1s opacity;
+    text-shadow: 2px 2px 4px black;
 }
 
 .chips {
