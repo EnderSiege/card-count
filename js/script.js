@@ -32,7 +32,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
         notInfoEl = document.getElementById("not-info"),
         youBetEl = document.getElementById("you-bet"),
         betAmtEl = document.getElementById("bet-amount"),
-        waitOnDealer = document.getElementById("wait-on-dealer");
+        waitOnDealer = document.getElementById("wait-on-dealer"),
+        menuEl = document.getElementById("menu");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -52,13 +53,34 @@ let deck = [],
     playerValue,
     playerCount = 0
     infoSectionActive = false,
-    playerStands = false;
+    playerStands = false,
+    activeGame = false,
+    activeMenu = false;
 
 playerBetUpdate();
 playerBankUpdate();
 
 infoSection.style = "display: none";
 waitOnDealer.style = "display: none";
+hideMenu();
+
+function showMenu() {
+    menuEl.style = "display: block";
+}
+
+menuBtn.addEventListener("click", function() {
+    if (activeMenu) {
+        hideMenu();
+    } else {
+        showMenu();
+    }
+
+    activeMenu = !activeMenu;
+})
+
+function hideMenu() {
+    menuEl.style = "display: none";
+}
 
 // Clear play areas
 clearHands();
@@ -397,7 +419,8 @@ dealerValue = 0,
 dealerCount = 0,
 playerValue = 0,
 playerCount = 0,
-playerStands = false;
+playerStands = false,
+activeGame = true;
 
 newGameBtn.style = "display: none";
 dealerValueCountEl.style = "display: none";
