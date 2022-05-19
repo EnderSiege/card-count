@@ -34,6 +34,12 @@ button {
     /* border-radius: 10px; */
 }
 
+.wait-on-dealer {
+    color: white;
+    background-color: #222;
+    border-color: #111 #555 #555 #111;
+}
+
 /* p {
     margin-bottom: 0.5rem;
 } */
@@ -220,6 +226,14 @@ li {
     justify-content: space-between;
     gap: 20px;
     bottom: 3.5rem;
+}
+
+.you-bet {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 1;
+    transition: 1s opacity;
 }
 
 .chips {

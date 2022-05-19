@@ -29,7 +29,10 @@ const   hitMeBtn = document.getElementById("hit-me"),
         playerCountEl = document.getElementById("player-hand-count"),
         infoSection = document.getElementById("info-section"),
         infoEl = document.getElementById("info"),
-        notInfoEl = document.getElementById("not-info");
+        notInfoEl = document.getElementById("not-info"),
+        youBetEl = document.getElementById("you-bet"),
+        betAmtEl = document.getElementById("bet-amount"),
+        waitOnDealer = document.getElementById("wait-on-dealer");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -55,6 +58,7 @@ playerBetUpdate();
 playerBankUpdate();
 
 infoSection.style = "display: none";
+waitOnDealer.style = "display: none";
 
 // Clear play areas
 clearHands();
@@ -223,10 +227,11 @@ function getFlippedCard(deck) {
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
     announceEl.style = "display: none";
-    hitMeBtn.style = "display: block;";
-    standBtn.style = "display: block;";
-    dealBtn.style = "display: none;";
-    resetBetBtn.style = "display: none;";
+    hitMeBtn.style = "display: block";
+    standBtn.style = "display: block";
+    dealBtn.style = "display: none";
+    resetBetBtn.style = "display: none";
+    waitOnDealer.style = "display: none";
 
     player.push(getCard(deck));
     dealer.push(getFlippedCard(deck));
@@ -373,6 +378,7 @@ function checkBlackjack() {
 function check21() {
     if (valueHand(player) === 21) {
         stand(shuffled);
+        waitOnDealer.style = "display: block";
     }
 }
 
@@ -395,6 +401,7 @@ playerStands = false;
 
 newGameBtn.style = "display: none";
 dealerValueCountEl.style = "display: none";
+waitOnDealer.style = "display: none";
 
 playerBetUpdate();
 playerBankUpdate();
@@ -528,6 +535,9 @@ standBtn.addEventListener("click", function() {
 // Function for the "Stand" button
 function stand(deck) {
     console.log("You choose to stand");
+    hitMeBtn.style = "display: none";
+    standBtn.style = "display: none";
+    waitOnDealer.style = "display: block";
     updatePlayAreaStand();
 // Ensure player does not have 21 or more cards, then carry on
     if (valueHand(player) > 21) {
@@ -632,6 +642,7 @@ function announce(message) {
         announceEl.textContent = message;
         announceEl.style = "display: block";
         chipsRowEl.style = "display: flex";
+        waitOnDealer.style = "display: none";
         updateChips();
         hideHitStand();
     }
@@ -655,6 +666,7 @@ function restoreHitStand() {
 function bet1() {
     playerBet ++;
     playerBank --;
+    betPopup(1);
     playerBetUpdate();
     playerBankUpdate();
 }
@@ -662,6 +674,7 @@ function bet1() {
 function bet5() {
     playerBet += 5;
     playerBank -= 5;
+    betPopup(5);
     playerBetUpdate();
     playerBankUpdate();
 }
@@ -669,6 +682,7 @@ function bet5() {
 function bet25() {
     playerBet += 25;
     playerBank -= 25;
+    betPopup(25);
     playerBetUpdate();
     playerBankUpdate();
 }
@@ -676,8 +690,19 @@ function bet25() {
 function bet100() {
     playerBet += 100;
     playerBank -= 100;
+    betPopup(100);
     playerBetUpdate();
     playerBankUpdate();
+}
+
+function betPopup(amt) {
+    betAmtEl.textContent = amt;
+    youBetEl.style = "display: block";
+    window.setTimeout(fadeout, 1000);
+}
+
+function fadeout() {
+    youBetEl.style.opacity = '0';
 }
 
 // Chips event listeners
@@ -795,6 +820,7 @@ function showGameOver(message) {
     hitMeBtn.style = "display: none";
     standBtn.style = "display: none";
     newGameBtn.style = "display: block";
+    waitOnDealer.style = "display: none";
 }
 
 newGameBtn.addEventListener("click", function() {
