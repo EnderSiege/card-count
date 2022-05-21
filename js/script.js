@@ -570,6 +570,7 @@ function check21() {
 function newGame() {
 
 hideMenu();
+menuBtn.style = "display: block";
 
 deck = [],
 player = [],
