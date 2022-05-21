@@ -55,35 +55,195 @@ let deck = [],
     infoSectionActive = false,
     playerStands = false,
     activeGame = false,
-    activeMenu = false;
+    activeMenu = true,
+    activeHitBtn = false,
+    wasHitBtnActive = false,
+    activeStandBtn = false,
+    wasStandBtnActive = false,
+    activeDealBtn = false,
+    wasDealBtnActive = false,
+    activeResetBtn = false,
+    wasResetBtnActive = false,
+    activeNewGameBtn = true,
+    wasNewGameBtnActive = false;
 
-playerBetUpdate();
-playerBankUpdate();
-
-infoSection.style = "display: none";
+checkBtns();
 waitOnDealer.style = "display: none";
-hideMenu();
 
-function showMenu() {
-    menuEl.style = "display: block";
-}
+showMenu();
+
+// playerBetUpdate();
+// playerBankUpdate();
+
+// infoSection.style = "display: none";
+// waitOnDealer.style = "display: none";
+// hideMenu();
 
 menuBtn.addEventListener("click", function() {
     if (activeMenu) {
         hideMenu();
+        console.log("Hide Menu");
     } else {
         showMenu();
+        console.log("Show Menu");
     }
 
-    activeMenu = !activeMenu;
+    // Why does this not work...?
+    // activeMenu = activeMenu ? false : true;
 })
 
+function showMenu() {
+    // Check status of all buttons
+    checkWas();
+
+    // Change active statuses
+    activeNewGameBtn = true;
+    activeHitBtn = false;
+    activeStandBtn = false;
+    activeDealBtn = false;
+    activeResetBtn = false;
+
+    // UI matches status
+    checkBtns();
+
+    activeMenu = true;
+    menuEl.style = "display: block";
+}
+
 function hideMenu() {
+
+    // This isn't working?
+    matchWas();
+
+    checkBtns();
+
+    activeMenu = false;
     menuEl.style = "display: none";
 }
 
+// Toggles display of menu or buttons based on active status
+function checkBtns() {
+    // Check if menu active
+    if (activeMenu) {
+        menuEl.style = "display: block";
+    } else {
+        menuEl.style = "display: none";
+    }
+
+    // Check if Hit button active
+    if (activeHitBtn) {
+        hitMeBtn.style = "display: block";
+    } else {
+        hitMeBtn.style = "display: none";
+    }
+
+    // Check if Stand button active
+    if (activeStandBtn) {
+        standBtn.style = "display: block";
+    } else {
+        standBtn.style = "display: none";
+    }
+
+    // Check if Deal button active
+    if (activeDealBtn) {
+        dealBtn.style = "display: block";
+    } else {
+        dealBtn.style = "display: none";
+    }
+
+    // Check if Reset button active
+    if (activeResetBtn) {
+        resetBetBtn.style = "display: block";
+    } else {
+        resetBetBtn.style = "display: none";
+    }
+
+    // Check if New Game button active
+    if (activeNewGameBtn) {
+        newGameBtn.style = "display: block";
+    } else {
+        newGameBtn.style = "display: none";
+    }
+}
+
+// For determining which buttons to show once menu is closed
+function checkWas() {
+    // Check if Hit button active
+    if (activeHitBtn) {
+        wasHitBtnActive = true;
+    } else {
+        wasHitBtnActive = false;
+    }
+
+    // Check if Stand button active
+    if (activeStandBtn) {
+        wasStandBtnActive = true;
+    } else {
+        wasStandBtnActive = false;
+    }
+
+    // Check if Deal button active
+    if (activeDealBtn) {
+        wasDealBtnActive = true;
+    } else {
+        wasDealBtnActive = false;
+    }
+
+    // Check if Reset button active
+    if (activeResetBtn) {
+        wasResetBtnActive = true;
+    } else {
+        wasResetBtnActive = false;
+    }
+
+    // Check if New Game button active
+    if (activeNewGameBtn) {
+        wasNewGameBtnActive = true;
+    } else {
+        wasNewGameBtnActive = false;
+    }
+}
+
+// Make all "active" match "was" statuses
+function matchWas() {
+    // Check Hit button
+    if (wasHitBtnActive) {
+        activeHitBtn = true;
+    } else {
+        activeHitBtn = false;
+    }
+
+    // Check Stand button
+    if (wasStandBtnActive) {
+        activeStandBtn = true;
+    } else {
+        activeStandBtn = false;
+    }
+
+    // Check Deal button
+    if (wasDealBtnActive) {
+        activeDealBtn = true;
+    } else {
+        activeDealBtn = false;
+    }
+
+    // Check Reset button
+    if (wasResetBtnActive) {
+        activeResetBtn = true;
+    } else {
+        activeResetBtn = false;
+    }
+
+    // Check New Game button
+    if (wasNewGameBtnActive) {
+        activeNewGameBtn = true;
+    } else {
+        activeNewGameBtn = false;
+    }
+}
+
 // Clear play areas
-clearHands();
+// clearHands();
 
 // Update the count
 function updateCount(card) {
@@ -249,11 +409,13 @@ function getFlippedCard(deck) {
 // Initial card deal among both players (currently only works for two)
 function dealCards(deck) {
     announceEl.style = "display: none";
-    hitMeBtn.style = "display: block";
-    standBtn.style = "display: block";
-    dealBtn.style = "display: none";
-    resetBetBtn.style = "display: none";
+    activeHitBtn = true;
+    activeStandBtn = true;
+    activeDealBtn = false;
+    activeResetBtn = false;
     waitOnDealer.style = "display: none";
+
+    checkBtns();
 
     player.push(getCard(deck));
     dealer.push(getFlippedCard(deck));
@@ -405,7 +567,9 @@ function check21() {
 }
 
 function newGame() {
-    
+
+hideMenu();
+
 deck = [],
 player = [],
 dealer = [],
@@ -422,9 +586,15 @@ playerCount = 0,
 playerStands = false,
 activeGame = true;
 
-newGameBtn.style = "display: none";
+activeNewGameBtn = false;
+activeHitBtn = false;
+activeStandBtn = false;
+activeDealBtn = true;
+activeResetBtn = true;
 dealerValueCountEl.style = "display: none";
 waitOnDealer.style = "display: none";
+
+checkBtns();
 
 playerBetUpdate();
 playerBankUpdate();
@@ -448,14 +618,7 @@ infoSection.style = "display: block";
 // testing shuffle
 console.log("Cards are shuffled:");
 console.log(shuffled);
-
-hitMeBtn.style = "display: none";
-standBtn.style = "display: none";
-dealBtn.style = "display: block";
-resetBetBtn.style = "display: block";
 }
-
-newGame();
 
 dealBtn.addEventListener("click", function() {
     if (playerBet === 0) {
@@ -558,8 +721,9 @@ standBtn.addEventListener("click", function() {
 // Function for the "Stand" button
 function stand(deck) {
     console.log("You choose to stand");
-    hitMeBtn.style = "display: none";
-    standBtn.style = "display: none";
+    activeHitBtn = false;
+    activeStandBtn = false;
+    checkBtns();
     waitOnDealer.style = "display: block";
     updatePlayAreaStand();
 // Ensure player does not have 21 or more cards, then carry on
@@ -673,16 +837,18 @@ function announce(message) {
 
 // Prevent Hit or Stand from being used
 function hideHitStand() {
-    hitMeBtn.style = "display: none";
-    standBtn.style = "display: none";
-    dealBtn.style = "display: block";
-    resetBetBtn.style = "display: block";
+    activeHitBtn = false;
+    activeStandBtn = false;
+    activeDealBtn = true;
+    activeResetBtn = true;
+    checkBtns();
 }
 
 // Restore the Hit and Stand buttons
 function restoreHitStand() {
-    hitMeBtn.style = "display: block;";
-    standBtn.style = "display: block;";
+    activeHitBtn = true;
+    activeStandBtn = true;
+    checkBtns();
 }
 
 // Chips functions
@@ -840,9 +1006,10 @@ function showGameOver(message) {
     console.log(message);
     announceEl.textContent = message;
     announceEl.style = "display: block";
-    hitMeBtn.style = "display: none";
-    standBtn.style = "display: none";
-    newGameBtn.style = "display: block";
+    activeHitBtn = false;
+    activeStandBtn = false;
+    activeNewGameBtn = true;
+    checkBtns();
     waitOnDealer.style = "display: none";
 }
 
