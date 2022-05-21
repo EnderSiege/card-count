@@ -69,6 +69,7 @@ let deck = [],
 
 checkBtns();
 waitOnDealer.style = "display: none";
+menuBtn.style = "display: none";
 
 showMenu();
 
