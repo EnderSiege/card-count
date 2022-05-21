@@ -14,6 +14,7 @@ body {
 }
 
 .menu {
+    color: white;
     position: fixed;
     top: 0;
     right: 0;
@@ -21,6 +22,36 @@ body {
     left: 0;
     background: url(../img/table.jpg) repeat;
     z-index: 5;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    padding-top: 1.2rem;
+}
+
+.menu p {
+    padding: 1rem;
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr td:first-child {
+    text-align: right;
+}
+
+tr td:last-child {
+    padding: 0 1rem;
 }
 
 .visible-area {

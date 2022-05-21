@@ -10,7 +10,30 @@
 </head>
 <body>
     <div id="menu" class="menu">
-        <p>Blah blah</p>
+        <h1>Card Count</h1>
+        <h3>An ndrsiege project</h3>
+
+        <h2>Blackjack Rules</h2>
+        <p>The objective of the game is to end the round with a better hand than the dealer. Numbered cards match their value, face cards are worth 10, and Aces are 11, unless the total value of the hand is over 21, then Aces have a value of 1.</p>
+        <p>Bets may only be placed prior to dealing. Blackjack (getting 21 at the start of the hand), awards 3-to-1. Dealer holds on a soft 17.</p>
+
+        <h2>Card Counting Strategy</h2>
+        <p>Once the deck is shuffled, the count resets to zero. Cards carry the following counts:</p>
+        <table>
+            <tr>
+                <td>2 - 6:</td>
+                <td>+1</td>
+            </tr>
+            <tr>
+                <td>7-9:</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>10, J, Q, K, A:</td>
+                <td>-1</td>
+            </tr>
+        </table>
+        
     </div>
     <div id="announce" class="announce announce-toggle">
     </div>
@@ -101,7 +124,8 @@
     </div>
     <div class="button-row">
         <button id="menu-button" class="menu-button">
-            <div onclick="clickMenu(this)">
+            <!-- <div onclick="clickMenu(this)"> -->
+            <div>
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>

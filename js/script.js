@@ -33,7 +33,8 @@ const   hitMeBtn = document.getElementById("hit-me"),
         youBetEl = document.getElementById("you-bet"),
         betAmtEl = document.getElementById("bet-amount"),
         waitOnDealer = document.getElementById("wait-on-dealer"),
-        menuEl = document.getElementById("menu");
+        menuEl = document.getElementById("menu"),
+        menuIcon = document.getElementById("menu-icon");
 
 // Deck, player, and dealer arrays starts empty
 let deck = [],
@@ -781,9 +782,13 @@ function checkDeck(deck) {
 //     clickMenu(x);
 // })
 
-function clickMenu(x) {
-    x.classList.toggle("change");
-}
+// function clickMenu(x) {
+//     x.classList.toggle("change");
+// }
+
+// function clickMenu() {
+//     menuIcon.classList.toggle("change");
+// }
 
 // Function for the "New" button
 // This is the old function
